@@ -1,0 +1,34 @@
+{
+  "frozen": {
+    "src/eval/official_oracle/official_evaluate.py": {
+      "sha256": "2fb31aa5c13308d39776d0c7b44a56d978a867a81e6c28a21c0eb4895a9d4cc3",
+      "bytes": 59276,
+      "source": "data/raw/B榜提交样例.zip::official_evaluate.py"
+    },
+    "src/eval/official_oracle/rle_validation.py": {
+      "sha256": "bd88e601db227a51e5b77d50e14876481685364263a512b77bf48b9db87535cb",
+      "bytes": 2695,
+      "source": "data/raw/B榜提交样例.zip::rle_validation.py"
+    },
+    "src/submit/official/submission.py": {
+      "sha256": "125bd2f9975eb3a60973ee91c53a68a8c923d4d8e40ae39e21487b0bab3d30b9",
+      "bytes": 3931,
+      "source": "data/raw/B榜提交样例.zip::submission.py"
+    },
+    "src/submit/official/validate_b_submission.py": {
+      "sha256": "83acf5e52a8188e8ca6a0f2abe7e320133bb50293d33a82229152633f7eb43f9",
+      "bytes": 2616,
+      "source": "data/raw/B榜提交样例.zip::validate_b_submission.py"
+    },
+    "src/submit/official/generate_solution_commit.py": {
+      "sha256": "d39ae54e30b2021bea7f156141b7da859b277716c1ad548c346193500e900b81",
+      "bytes": 1953,
+      "source": "data/raw/B榜提交样例.zip::generate_solution_commit.py"
+    },
+    "src/submit/official/validate_submission_a.py": {
+      "sha256": "b07d6134720bfdb8031b4d0233c9f25a022d7f172691f67cb19dd859bb0f27dd",
+      "bytes": 7899,
+      "source": "data/raw/提交样例A.zip::提交样例/tools/validate_submission.py"
+    }
+  }
+}

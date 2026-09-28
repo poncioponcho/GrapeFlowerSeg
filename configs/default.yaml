@@ -1,0 +1,205 @@
+# =====================================================================
+# 阳光玫瑰葡萄花穗完整性判断与分割挑战赛 · 常量唯一事实源
+# (2026 iFLYTEK AI 开发者大赛 · 花穗实例分割)
+#
+# 治理规则：目标 / 路径 / 阈值 / 类定义 / 文件名等决策常量只在本文件定义；
+# src/**、scripts/**、tests/** 一律不得硬编码，改动先改本文件并留痕到
+# docs/experiments.md。
+#
+# 事实来源：官方随数据下发的 README_数据说明.md 与 B榜必读！！！提交说明.md，
+# 以及冻结的官方评分/校验脚本 src/eval/official_oracle/official_evaluate.py。
+# 详见 docs/official_rules.md。
+#
+# ⚠️ 本赛题与「妮娜皇后葡萄果粒着色阶段分级（三分类 / Macro-F1）」是【两个不同赛题】。
+# 以本机实际数据为准，本配置描述的是花穗实例分割。见 docs/recon_findings.md。
+# =====================================================================
+
+project:
+  name: berry-panicle-seg
+  version: "1.0.0"
+  seed: 42
+
+competition:
+  # ---- 赛题身份（用于防止交错比赛；见 src/submit/identity.py）----
+  # ⚠️ 上传前必须用 id + official_page 与平台页面对照。
+  id: "GrapeFlowerSeg"
+  slug: "grape-flower-seg"
+  platform: "https://challenge.xfyun.cn"
+  name: "阳光玫瑰葡萄花穗完整性判断与分割挑战赛"
+  # 官方赛题页（2026-09-26 已核对，与 data/raw 下载的数据完全对应）
+  official_page: "https://challenge.xfyun.cn/topic/info?type=GrapeFlowerSeg&option=ssgy"
+  # 用于区分本工作区里同时存在的其他赛题（勿混用）
+  not_this_competition:
+    - id: "824"
+      name: "妮娜皇后葡萄果粒着色阶段分级"
+      why: "三分类 / Macro-F1 / 提交 predictions.csv —— 格式与本赛题完全不同"
+    - id: "825"
+      name: "复杂田间环境下妮娜皇后葡萄果粒实例分割挑战赛"
+      why: "同为实例分割，最易混淆；但类别与图像清单不同"
+    - id: "Spark-X2.5"
+      name: "Spark-X2.5 端侧模型创新挑战赛"
+      why: "完全不同的赛题，工作区另有目录"
+  organizer: "中国农业大学"
+  prize: "一等奖 5000 / 二等奖 3000 / 三等奖 2000 元（各 1 名，共 3 名）"
+  n_teams: 393
+  task: instance_segmentation
+  track: "计算机视觉 / 算法赛"
+  schedule:
+    a_board: "2026-09-03 .. 2026-09-22"    # A 榜已结束
+    b_board: "2026-09-24T00:00 .. 2026-09-28T17:00"
+    final: "2026-10-24"
+  a_board_daily_submit_limit: 3
+  # 赛后复核对象：官方赛题页写 Top3（或获奖序列）；B榜必读说明书写 Top10。
+  # 两者冲突，按更严格的口径准备（即 Top10 也备好 solution.zip）。
+  post_review_scope: "Top3（赛题页）/ Top10（B榜必读说明书）— 冲突，按更严格口径准备"
+
+  # ---- 提交用类别编号（result.json 的 category_id） ----
+  # 注意：与训练 COCO 标注的编号【不同】，必须转换。
+  submit_classes:
+    0: complete_panicle      # 完整花穗
+    1: incomplete_panicle    # 不完整花穗
+  submit_labels: [0, 1]
+
+  # ---- 训练 COCO 标注 category_id -> 提交 category_id ----
+  # 训练 category_id=1（name="0"）-> 完整花穗 -> 提交 0
+  # 训练 category_id=2（name="1"）-> 不完整花穗 -> 提交 1
+  gt_to_submit_category:
+    1: 0
+    2: 1
+
+  # ---- 评测指标 ----
+  metric: mask_map
+  metric_name: "COCO Mask mAP@[0.50:0.95]"
+  iou_thresholds: [0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95]
+  recall_points: 101
+  max_dets: [1, 10, 100]
+  area_range: all
+  ignore_overlap_threshold: 0.50   # pred∩ignore / pred >= 0.5 -> 不计 TP 也不计 FP
+
+  # ---- 数据规模（本机实测） ----
+  n_train_images: 702             # 351 原图 + 351 张 _aug1
+  n_train_sources: 351
+  n_train_instances: 1602
+  n_train_ignore_regions: 1822
+  n_test_a_images: 94
+  n_test_b_images: 106            # 53 原图 + 53 张 _aug1，全部参与评测
+  n_test_b_sources: 53
+  image_size: [2048, 1152]        # (W, H)
+
+  # ---- 截止与提交 ----
+  b_board_window: "2026-09-24T00:00 .. 2026-09-28T17:00"
+  deadline: "2026-09-28T17:00"
+  b_board_submit_limit: 3
+  b_data_version: "B-v1"
+
+  # ---- 约束 ----
+  external_data_allowed: false
+  allowed_pretrained: ["imagenet", "coco"]   # 公开可离线运行的预训练权重，需在 README 列明
+  online_api_allowed: false
+  reproduction_env: "Ubuntu 22.04 / Python 3.10 / PyTorch 2.2 / CUDA 12.1 / 单卡 / batch=1"
+  post_review_map_tolerance: 0.005
+
+data:
+  root: data
+  # 训练集（解压自 训练集A.zip）
+  train_images: data/train/训练集/train/images
+  instances_json: data/train/训练集/annotations/instances_train.json
+  ignore_json: data/train/训练集/annotations/ignore_regions_train.json
+  # 测试集（无标注）
+  test_a_images: data/testA/测试集A/testA/images
+  test_b_images: data/testB/testB/images
+  # 公开图像清单（只有 image_id/width/height，无答案）
+  test_a_manifest: data/manifests/images_testA.json
+  test_b_manifest: data/manifests/images_test_b.json
+  processed_dir: data/processed
+
+  # 源图分组：IMG_332.jpg 与 IMG_332_aug1.jpg 是【同一张源图】，
+  # 本地验证绝不能把它们分到不同折，否则泄漏。
+  source_group:
+    aug_suffix: "_aug1"
+    strip_suffixes: [".jpg", ".jpeg", ".png", ".bmp"]
+
+split:
+  strategy: grouped_kfold_by_source   # 禁止按图随机划分
+  n_folds: 5
+  seed: 42
+  output_dir: data/processed/splits
+
+eval:
+  # 官方评分脚本（冻结，逐字节不可改；改动即触发 SHA 断言红灯）
+  oracle_script: src/eval/official_oracle/official_evaluate.py
+  oracle_freeze_manifest: src/official_freeze.json
+  output_dir: outputs/reports
+  # 本地快速评测（仅用于迭代筛选，最终裁决一律以官方脚本为准）
+  local_fast_eval: true
+
+submit:
+  # B 榜提交包：根目录【恰好】两个普通文件
+  b_zip_name: b_submission.zip
+  b_root_files: [result.json, solution_commit.txt]
+  result_json_name: result.json
+  commit_name: solution_commit.txt
+  result_version: "1.0"
+
+  # solution_commit.txt：恰好 5 个字段，key=value，UTF-8，无注释无空行
+  commit_fields: [solution_name, hash_algorithm, solution_sha256, solution_size, b_data_version]
+  commit_solution_name: solution.zip
+  commit_hash_algorithm: SHA-256
+
+  # 官方校验工具（冻结）
+  official_validator: src/submit/official/validate_b_submission.py
+  official_parser: src/submit/official/submission.py
+  official_commit_tool: src/submit/official/generate_solution_commit.py
+
+  # 体积上限（官方）
+  max_archive_bytes: 1073741824     # 1 GiB
+  max_result_bytes: 1073741824      # 1 GiB
+  max_commit_bytes: 65536           # 64 KiB
+  max_solution_zip_bytes: 5368709120      # 5 GB（赛后提交）
+  max_solution_unzip_bytes: 10737418240   # 10 GB（赛后提交）
+
+  output_dir: outputs/submissions
+
+train:
+  # 实例分割主干（按可用性择优；见 docs/experiments.md 的筛选记录）
+  framework: torchvision_maskrcnn
+  backbone: resnet50_fpn_v2
+  pretrained: coco                # 官方允许公开可离线运行的预训练权重
+  epochs: 24
+  batch_size: 2
+  lr: 0.005
+  momentum: 0.9
+  weight_decay: 0.0005
+  scheduler: cosine
+  amp: true
+  num_workers: 4
+  grad_clip: 10.0
+  # 训练分辨率：原图 2048x1152，直接训练代价高，按短边缩放
+  train_short_side: 1024
+  test_short_side: 1152
+  aug:
+    hflip_p: 0.5
+    color_jitter: {brightness: 0.15, contrast: 0.15, saturation: 0.12, hue: 0.02}
+    # ⚠️ 禁用 MixUp/CutMix：实例分割的掩膜无法正确混合
+  forbidden_augmentations: [mixup, cutmix]
+  output_dir: outputs/checkpoints
+
+inference:
+  score_threshold: 0.05           # COCO 评测建议低阈值多召回（maxDets=100）
+  mask_threshold: 0.5
+  max_detections_per_image: 100   # 与官方 maxDets 上限一致
+  batch_size: 1
+  raw_predictions_dir: outputs/predictions
+
+env_pins:
+  # 训练侧与评测侧版本必须记录固定
+  python: "3.13.12"
+  numpy: "2.1.3"
+  scikit-learn: "1.5.2"
+  pandas: "2.2.3"
+  PyYAML: "6.0.2"
+  Pillow: "10.4.0"
+  pytest: "8.3.3"
+  pycocotools: "2.0.10"
+  # 官方评测器要求 numpy==1.26.4 / pycocotools==2.0.10（见样例 requirements.txt）；
+  # 本机 numpy 2.1.3 实测可运行官方脚本，若出现差异需回退到 1.26.4 复现。

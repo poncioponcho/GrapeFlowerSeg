@@ -1,0 +1,145 @@
+{
+  "name": "night_20260927_grape_seg",
+  "baseline": "单折 fold0 干净留出折 Mask mAP = 0.3434；平台提交#1 = 0.31382。集成 0.5436 为泄漏膨胀上界（fold1-4 见过 fold0 验证图），仅作健康检查，门槛为 sanity floor >= 0.30；提交 ensemble 的依据是 testB 对全部 5 折均未见，集成多样性收益成立。",
+  "tasks": [
+    {
+      "id": "archive_submission1",
+      "priority": 0,
+      "critical": true,
+      "est_seconds": 10,
+      "retries": 0,
+      "command": ["bash", "-c", "mkdir -p outputs/submissions/submission1_uploaded && for f in b_submission.zip result.json solution_commit.txt solution.zip SUBMISSION_IDENTITY.md; do [ -f \"outputs/submissions/$f\" ] && mv \"outputs/submissions/$f\" outputs/submissions/submission1_uploaded/ || true; done && ls outputs/submissions/submission1_uploaded/"]
+    },
+    {
+      "id": "wait_ensemble_eval",
+      "type": "wait_file",
+      "priority": 1,
+      "critical": true,
+      "timeout_s": 1800,
+      "file": "outputs/reports/ensemble_fold0_summary.json"
+    },
+    {
+      "id": "predict_testB_ensemble",
+      "priority": 10,
+      "gpu": true,
+      "critical": true,
+      "est_seconds": 600,
+      "timeout_s": 2400,
+      "depends_on": ["wait_ensemble_eval"],
+      "gate": {
+        "all_of": [
+          {
+            "file": "outputs/reports/ensemble_fold0_summary.json",
+            "key": "mask_map",
+            "op": ">=",
+            "value": 0.30,
+            "name": "ensemble_sanity_floor"
+          }
+        ]
+      },
+      "command": ["python3", "scripts/predict_test.py", "--split", "testB", "--folds", "0,1,2,3,4", "--out", "outputs/predictions/raw_predictions_testB_ensemble.json"]
+    },
+    {
+      "id": "build_submission2",
+      "priority": 11,
+      "critical": true,
+      "est_seconds": 1800,
+      "timeout_s": 5400,
+      "depends_on": ["predict_testB_ensemble"],
+      "gate": {
+        "all_of": [
+          {
+            "file": "outputs/reports/ensemble_fold0_summary.json",
+            "key": "mask_map",
+            "op": ">=",
+            "value": 0.30,
+            "name": "ensemble_sanity_floor"
+          }
+        ]
+      },
+      "command": ["python3", "scripts/build_submission.py", "--predictions", "outputs/predictions/raw_predictions_testB_ensemble.json", "--with-weights", "0,1,2,3,4"]
+    },
+    {
+      "id": "repro_sample_check",
+      "priority": 12,
+      "est_seconds": 1500,
+      "timeout_s": 3000,
+      "depends_on": ["build_submission2"],
+      "input_files": ["outputs/submissions/solution.zip", "outputs/predictions/raw_predictions_testB_ensemble.json"],
+      "command": ["python3", "scripts/repro_check.py", "--solution-zip", "outputs/submissions/solution.zip", "--predictions", "outputs/predictions/raw_predictions_testB_ensemble.json", "--manifest", "data/manifests/images_test_b.json", "--num-images", "8"]
+    },
+    {
+      "id": "threshold_scan_ensemble_holdout",
+      "priority": 20,
+      "est_seconds": 300,
+      "timeout_s": 1200,
+      "depends_on": ["wait_ensemble_eval"],
+      "input_files": [
+        "outputs/reports/ensemble_fold0/result.json",
+        "outputs/reports/ensemble_fold0/gt.json",
+        "outputs/reports/ensemble_fold0/ignore.json"
+      ],
+      "command": ["python3", "scripts/threshold_scan.py", "--submission", "outputs/reports/ensemble_fold0/result.json", "--gt", "outputs/reports/ensemble_fold0/gt.json", "--ignore", "outputs/reports/ensemble_fold0/ignore.json", "--out", "outputs/reports/ensemble_threshold_scan.json"]
+    },
+    {
+      "id": "fold_eval_1",
+      "priority": 21,
+      "gpu": true,
+      "est_seconds": 360,
+      "timeout_s": 1200,
+      "depends_on": ["wait_ensemble_eval"],
+      "command": ["python3", "scripts/evaluate_local.py", "--fold", "1", "--out", "outputs/reports/fold1_summary.json"]
+    },
+    {
+      "id": "fold_eval_2",
+      "priority": 22,
+      "gpu": true,
+      "est_seconds": 360,
+      "timeout_s": 1200,
+      "depends_on": ["wait_ensemble_eval"],
+      "command": ["python3", "scripts/evaluate_local.py", "--fold", "2", "--out", "outputs/reports/fold2_summary.json"]
+    },
+    {
+      "id": "fold_eval_3",
+      "priority": 23,
+      "gpu": true,
+      "est_seconds": 360,
+      "timeout_s": 1200,
+      "depends_on": ["wait_ensemble_eval"],
+      "command": ["python3", "scripts/evaluate_local.py", "--fold", "3", "--out", "outputs/reports/fold3_summary.json"]
+    },
+    {
+      "id": "fold_eval_4",
+      "priority": 24,
+      "gpu": true,
+      "est_seconds": 360,
+      "timeout_s": 1200,
+      "depends_on": ["wait_ensemble_eval"],
+      "command": ["python3", "scripts/evaluate_local.py", "--fold", "4", "--out", "outputs/reports/fold4_summary.json"]
+    },
+    {
+      "id": "e4_fold0_epochs24",
+      "priority": 30,
+      "gpu": true,
+      "est_seconds": 13200,
+      "timeout_s": 21600,
+      "depends_on": [
+        "threshold_scan_ensemble_holdout",
+        "fold_eval_1",
+        "fold_eval_2",
+        "fold_eval_3",
+        "fold_eval_4"
+      ],
+      "command": ["python3", "scripts/train_segmentation.py", "--folds", "0", "--light", "--short-side", "640", "--epochs", "24"]
+    },
+    {
+      "id": "eval_fold0_e24",
+      "priority": 31,
+      "gpu": true,
+      "est_seconds": 420,
+      "timeout_s": 1500,
+      "depends_on": ["e4_fold0_epochs24"],
+      "command": ["python3", "scripts/evaluate_local.py", "--fold", "0", "--out", "outputs/reports/fold0_e24_summary.json"]
+    }
+  ]
+}

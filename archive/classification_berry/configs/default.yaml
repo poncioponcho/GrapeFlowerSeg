@@ -1,0 +1,182 @@
+# =====================================================================
+# BerryColorGrade · 常量唯一事实源 (single source of truth)
+#
+# 治理规则（沿用 HardLane 仓库 DECISIONS §14 的配置纪律）：
+#   1. 目标 / 路径 / 阈值 / 类定义 / 文件名等决策常量只在本文件定义；
+#      任何 src/**、scripts/**、tests/** 都不得硬编码这些数值。
+#   2. 改常量先改本文件，再在 docs/experiments.md 留痕（变更原因 + 日期）。
+#   3. 评测口径必须与官方赛题页一致；不一致时以官网为准并同步本文件。
+#
+# ⚠️ 事实核对状态（2026-09-26 侦察结论，详见 docs/recon_findings.md）：
+#   - 官方赛题页 https://challenge.xfyun.cn/topic/info?type=824 为登录态 SPA，
+#     未登录无法抓取正文。以下带 [UNVERIFIED] 标记的字段来自第三方聚合站，
+#     必须由已登录成员在官网二次核对后再定稿。
+#   - 本地 data/raw 目录为空：数据集尚未下载，P1 之后全部被阻塞。
+# =====================================================================
+
+project:
+  name: berry-color-grade
+  version: "0.1.0"
+  seed: 42                       # 全局默认随机种子（训练 + 划分共用口径）
+
+competition:
+  name: "果粒着色阶段智能分级挑战赛 (BerryColorGrade)"
+  official_page: "https://challenge.xfyun.cn/topic/info?type=824"
+  sponsor: "中国农业大学"          # [UNVERIFIED] 来自第三方聚合站
+  track: "计算机视觉 / 算法赛"
+
+  # ---- 类定义（有序标签 0 < 1 < 2） ----
+  classes:
+    0: early_veraison            # 着色初期
+    1: mid_veraison              # 着色中期
+    2: full_coloration           # 充分着色
+  labels: [0, 1, 2]
+  adjacent_pairs: [[0, 1], [1, 2]]   # 已知难分方向，错误分析重点
+
+  # ---- 评测口径 ----
+  metric: macro_f1               # 排行榜排名依据 [UNVERIFIED：聚合站称官方 metric 未确认]
+  metric_average: macro
+  zero_division: 0               # 等价 sklearn f1_score(..., zero_division=0)
+  display_metrics: [accuracy, mae]   # 仅展示、不参与排名
+
+  # ---- 数据规模 [UNVERIFIED：待官网核对] ----
+  n_images_total: 2209
+  n_source_images_total: 168
+  n_train: 1769
+  n_train_sources: 130
+  n_test_a: 222
+  n_test_b: 218
+
+  # ---- 截止时间 [⚠️ 与用户口述存在冲突，见 docs/recon_findings.md] ----
+  # 用户口述：B 榜截止 2026-09-28 17:00
+  # 聚合站抓取：报名截止 2026-09-28 / 提交截止 2026-10-24
+  deadline_registration_claimed: "2026-09-28"
+  deadline_submission_claimed_by_user: "2026-09-28T17:00"
+  deadline_submission_scraped: "2026-10-24"
+  b_board_submit_limit: 3        # B 榜累计提交次数
+
+  # ---- 外部数据约束 ----
+  external_grape_data_allowed: false   # 禁止外部葡萄/果粒/果实数据
+  pretrained_weights_allowed: ["imagenet"]   # 仅限官方 ImageNet 预训练
+
+data:
+  raw_dir: data/raw
+  labels_csv: data/raw/labels.csv
+  image_dir: data/raw/images
+  test_a_dir: data/raw/testA
+  test_b_dir: data/raw/testB
+  processed_dir: data/processed
+  manifest_path: data/processed/manifest.csv
+
+  # labels.csv 字段名（如官网实际列名不同，只改这里）
+  columns:
+    image_id: image_id
+    file_name: file_name
+    label: label
+
+  # 源图分组键：官方按【原始源图】划分，本地验证必须同口径
+  source_key:
+    mode: derive_from_filename    # derive_from_filename | column
+    column: source_image_id
+    # ⚠️ 真实文件名未知，以下推导规则是【待校准的猜测】。
+    # 用 src/data/manifest.py 的 source_grouping_report() 验证：
+    #   在真实 1769 张训练集上必须得到 n_sources ≈ 130（配置中的官方值），
+    #   若 n_sources == n_images 说明推导失败、本地划分会泄漏。
+    #
+    # 优先使用 regex（命名组必须叫 source）；为 null 时回退到分隔符规则。
+    # 例：文件名 "src_017_berry_003.jpg" 且源图 token 含分隔符时，用
+    #     regex: '^(?P<source>src_\\d+)_'
+    regex: null
+    strip_suffixes: [".jpg", ".jpeg", ".png", ".bmp"]
+    delimiters: ["_", "-"]
+
+  image_size: 224                # 输入边长（P1 训练用；384 为备选）
+  imagenet_mean: [0.485, 0.456, 0.406]
+  imagenet_std: [0.229, 0.224, 0.225]
+
+split:
+  strategy: grouped_kfold_by_source   # 禁止按单图随机划分
+  n_folds: 5
+  seed: 42
+  output_dir: data/processed/splits
+
+eval:
+  labels: [0, 1, 2]
+  average: macro
+  zero_division: 0
+
+# ---- P1 训练（数据到位后启用；结构先冻结，超参可调） ----
+train:
+  backbone: convnext_tiny         # 首选；swin_tiny 为备选
+  pretrained: imagenet            # 仅限官方 ImageNet 预训练（硬性约束）
+  image_size: 224                 # 备选 384
+  epochs: 30
+  batch_size: 32
+  lr: 0.0003
+  weight_decay: 0.05
+  label_smoothing: 0.1
+  scheduler: cosine
+  amp: true
+  num_workers: 4
+  warmup_epochs: 2
+  grad_clip: 1.0
+  aug:
+    hflip_p: 0.5
+    rotation_deg: 12
+    random_resized_crop_scale: [0.75, 1.0]
+    random_resized_crop_ratio: [0.85, 1.15]
+    # ⚠️ HSV 抖动必须保守：颜色本身是标签信号，过强会破坏 0/1/2 的可分性
+    color_jitter:
+      brightness: 0.15
+      contrast: 0.15
+      saturation: 0.12
+      hue: 0.02
+    randaugment:
+      enabled: true
+      num_ops: 2
+      magnitude: 5
+  # ⚠️ 禁用项：会混淆相邻着色阶段的细粒度颜色差异（除非本地实验证伪）
+  forbidden_augmentations: [mixup, cutmix]
+  output_dir: outputs/train
+  checkpoint_name: fold{fold}.pt
+
+# ---- TTA（P2；flip-TTA 在车道线任务上是负收益，分类任务必须实测，勿预设结论） ----
+tta:
+  hflip: true                     # 待实测验证
+  scales: [1.0]                   # 多尺度，如 [0.85, 1.0, 1.15]
+  fusion: soft_voting             # 多折/多模型融合方式
+
+inference:
+  batch_size: 64
+  raw_predictions_path: outputs/predictions/raw_predictions.csv
+
+submit:
+  # A 榜：submit.zip 根目录【恰好一个文件】predictions.csv
+  a_zip_name: submit.zip
+  a_root_files: [predictions.csv]
+  # B 榜：b_submission.zip 内嵌 submit.zip + solution_commit.txt
+  b_zip_name: b_submission.zip
+  b_root_files: [submit.zip, solution_commit.txt]
+
+  predictions_file: predictions.csv
+  predictions_header: [image_id, label]
+  predictions_encoding: utf-8
+  valid_labels: [0, 1, 2]
+  require_unique_image_id: true
+  require_exact_id_set: true     # 不得缺失 / 重复 / 多出测试集外 id
+
+  output_dir: outputs/submissions
+  report_dir: outputs/reports
+
+env_pins:
+  # 训练侧与评测侧版本必须记录固定（硬性约束）
+  python: "3.13.12"
+  # numpy 1.26.4 无 cp313 wheel（源码编译），改用 2.1.3；
+  # 该值同时与 HardLane 仓库 Oracle 环境的 numpy pin 一致。
+  numpy: "2.1.3"
+  scikit-learn: "1.5.2"
+  pandas: "2.2.3"
+  PyYAML: "6.0.2"
+  Pillow: "10.4.0"
+  pytest: "8.3.3"
+  # P1 训练侧（torch/timm）在数据到位后补齐并冻结

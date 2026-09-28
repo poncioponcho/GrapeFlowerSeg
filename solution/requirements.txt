@@ -1,0 +1,7 @@
+# 复现环境：Python 3.10 / CUDA 12.1
+# 版本按题面规定固定；改动需在 README 中说明理由。
+torch==2.2.0
+torchvision==0.17.0
+numpy==1.26.4
+Pillow==10.2.0
+pycocotools==2.0.10
