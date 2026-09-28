@@ -1,0 +1,571 @@
+{
+  "version": "1.0",
+  "split": "testA",
+  "description": "A榜测试图像文件名与尺寸元数据，不含标注或答案。",
+  "images": [
+    {
+      "id": 385,
+      "file_name": "IMG_385.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10385,
+      "file_name": "IMG_385_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 386,
+      "file_name": "IMG_386.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10386,
+      "file_name": "IMG_386_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 387,
+      "file_name": "IMG_387.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10387,
+      "file_name": "IMG_387_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 391,
+      "file_name": "IMG_391.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10391,
+      "file_name": "IMG_391_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 392,
+      "file_name": "IMG_392.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10392,
+      "file_name": "IMG_392_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 393,
+      "file_name": "IMG_393.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10393,
+      "file_name": "IMG_393_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 394,
+      "file_name": "IMG_394.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10394,
+      "file_name": "IMG_394_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 395,
+      "file_name": "IMG_395.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10395,
+      "file_name": "IMG_395_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 396,
+      "file_name": "IMG_396.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10396,
+      "file_name": "IMG_396_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 397,
+      "file_name": "IMG_397.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10397,
+      "file_name": "IMG_397_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 398,
+      "file_name": "IMG_398.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10398,
+      "file_name": "IMG_398_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 399,
+      "file_name": "IMG_399.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10399,
+      "file_name": "IMG_399_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 400,
+      "file_name": "IMG_400.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10400,
+      "file_name": "IMG_400_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 401,
+      "file_name": "IMG_401.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10401,
+      "file_name": "IMG_401_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 402,
+      "file_name": "IMG_402.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10402,
+      "file_name": "IMG_402_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 403,
+      "file_name": "IMG_403.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10403,
+      "file_name": "IMG_403_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 404,
+      "file_name": "IMG_404.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10404,
+      "file_name": "IMG_404_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 405,
+      "file_name": "IMG_405.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10405,
+      "file_name": "IMG_405_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 406,
+      "file_name": "IMG_406.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10406,
+      "file_name": "IMG_406_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 407,
+      "file_name": "IMG_407.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10407,
+      "file_name": "IMG_407_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 408,
+      "file_name": "IMG_408.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10408,
+      "file_name": "IMG_408_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 409,
+      "file_name": "IMG_409.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10409,
+      "file_name": "IMG_409_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 410,
+      "file_name": "IMG_410.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10410,
+      "file_name": "IMG_410_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 411,
+      "file_name": "IMG_411.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10411,
+      "file_name": "IMG_411_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 412,
+      "file_name": "IMG_412.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10412,
+      "file_name": "IMG_412_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 413,
+      "file_name": "IMG_413.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10413,
+      "file_name": "IMG_413_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 414,
+      "file_name": "IMG_414.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10414,
+      "file_name": "IMG_414_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 415,
+      "file_name": "IMG_415.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10415,
+      "file_name": "IMG_415_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 416,
+      "file_name": "IMG_416.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10416,
+      "file_name": "IMG_416_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 417,
+      "file_name": "IMG_417.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10417,
+      "file_name": "IMG_417_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 418,
+      "file_name": "IMG_418.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10418,
+      "file_name": "IMG_418_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 419,
+      "file_name": "IMG_419.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10419,
+      "file_name": "IMG_419_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 420,
+      "file_name": "IMG_420.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10420,
+      "file_name": "IMG_420_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 421,
+      "file_name": "IMG_421.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10421,
+      "file_name": "IMG_421_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 422,
+      "file_name": "IMG_422.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10422,
+      "file_name": "IMG_422_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 423,
+      "file_name": "IMG_423.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10423,
+      "file_name": "IMG_423_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 424,
+      "file_name": "IMG_424.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10424,
+      "file_name": "IMG_424_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 425,
+      "file_name": "IMG_425.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10425,
+      "file_name": "IMG_425_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 426,
+      "file_name": "IMG_426.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10426,
+      "file_name": "IMG_426_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 427,
+      "file_name": "IMG_427.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10427,
+      "file_name": "IMG_427_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 428,
+      "file_name": "IMG_428.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10428,
+      "file_name": "IMG_428_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 429,
+      "file_name": "IMG_429.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10429,
+      "file_name": "IMG_429_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 430,
+      "file_name": "IMG_430.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10430,
+      "file_name": "IMG_430_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 431,
+      "file_name": "IMG_431.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10431,
+      "file_name": "IMG_431_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 432,
+      "file_name": "IMG_432.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10432,
+      "file_name": "IMG_432_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 433,
+      "file_name": "IMG_433.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10433,
+      "file_name": "IMG_433_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 434,
+      "file_name": "IMG_434.jpg",
+      "width": 2048,
+      "height": 1152
+    },
+    {
+      "id": 10434,
+      "file_name": "IMG_434_aug1.jpg",
+      "width": 2048,
+      "height": 1152
+    }
+  ]
+}

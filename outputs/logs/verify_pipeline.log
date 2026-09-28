@@ -1,0 +1,20 @@
+/Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/scripts/verify_training_pipeline.py:135: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  parts = " ".join(f"{k.replace('loss_', '')}={float(v):.3f}"
+device=mps  probe images=4  iters=150
+  contract OK: masks (2, 384, 683) labels [1, 2]
+    iter 25/150 loss=0.4143 [box_reg=0.139 classifier=0.075 mask=0.198 objectness=0.002 rpn_box_reg=0.001]
+    iter 50/150 loss=0.2953 [box_reg=0.075 classifier=0.042 mask=0.177 objectness=0.000 rpn_box_reg=0.001]
+    iter 75/150 loss=0.3008 [box_reg=0.113 classifier=0.034 mask=0.153 objectness=0.000 rpn_box_reg=0.000]
+    iter 100/150 loss=0.2057 [box_reg=0.048 classifier=0.022 mask=0.136 objectness=0.000 rpn_box_reg=0.000]
+    iter 125/150 loss=0.1462 [box_reg=0.009 classifier=0.018 mask=0.119 objectness=0.000 rpn_box_reg=0.000]
+    iter 150/150 loss=0.2895 [box_reg=0.136 classifier=0.028 mask=0.126 objectness=0.000 rpn_box_reg=0.000]
+    image 0: truth labels [1, 2] -> 2 detections at score>=0.5
+    image 1: truth labels [1, 2] -> 2 detections at score>=0.5
+    image 2: truth labels [1, 2] -> 2 detections at score>=0.5
+    image 3: truth labels [1, 2] -> 2 detections at score>=0.5
+
+  detections at score>=0.5: 8
+  categories recovered: [0, 1]
+
+✅ pipeline verified: both classes detected and masks encode to valid RLE

@@ -1,0 +1,12 @@
+
+===== attempt 1 start 2026-09-27T23:14:05 =====
+  >= 0.05  mAP=0.543584  (684/684 instances kept)
+  >= 0.10  mAP=0.543584  (605/684 instances kept)
+  >= 0.15  mAP=0.543584  (579/684 instances kept)
+  >= 0.20  mAP=0.543584  (556/684 instances kept)
+  >= 0.30  mAP=0.543584  (526/684 instances kept)
+  >= 0.40  mAP=0.543584  (507/684 instances kept)
+  >= 0.50  mAP=0.543584  (487/684 instances kept)
+
+best: >= 0.05  mAP=0.543584
+written outputs/reports/ensemble_threshold_scan.json

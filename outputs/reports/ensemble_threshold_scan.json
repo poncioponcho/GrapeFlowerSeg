@@ -1,0 +1,46 @@
+{
+  "input": "outputs/reports/ensemble_fold0/result.json",
+  "input_instances": 684,
+  "rows": [
+    {
+      "threshold": 0.05,
+      "mask_map": 0.5435842868308398,
+      "num_predictions": 684
+    },
+    {
+      "threshold": 0.1,
+      "mask_map": 0.5435842868308398,
+      "num_predictions": 605
+    },
+    {
+      "threshold": 0.15,
+      "mask_map": 0.5435842868308398,
+      "num_predictions": 579
+    },
+    {
+      "threshold": 0.2,
+      "mask_map": 0.5435842868308398,
+      "num_predictions": 556
+    },
+    {
+      "threshold": 0.3,
+      "mask_map": 0.5435842868308398,
+      "num_predictions": 526
+    },
+    {
+      "threshold": 0.4,
+      "mask_map": 0.5435842868308398,
+      "num_predictions": 507
+    },
+    {
+      "threshold": 0.5,
+      "mask_map": 0.5435842868308398,
+      "num_predictions": 487
+    }
+  ],
+  "best": {
+    "threshold": 0.05,
+    "mask_map": 0.5435842868308398,
+    "num_predictions": 684
+  }
+}

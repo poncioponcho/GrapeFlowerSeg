@@ -1,0 +1,38 @@
+device=mps  models=folds[1]  val images=140
+  loaded fold1.pt (infer short_side=[640, 1024] (trained at 640))
+  10/140  (14s)
+  20/140  (25s)
+  30/140  (38s)
+  40/140  (50s)
+  50/140  (63s)
+  60/140  (75s)
+  70/140  (87s)
+  80/140  (100s)
+  90/140  (111s)
+  100/140  (124s)
+  110/140  (136s)
+  120/140  (148s)
+  130/140  (161s)
+  140/140  (174s)
+Traceback (most recent call last):
+  File "/Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/scripts/evaluate_local.py", line 146, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/scripts/evaluate_local.py", line 123, in main
+    payload = run_official_scorer(
+        cfg,
+    ...<4 lines>...
+        error_json=work_dir / "error.json",
+    )
+  File "/Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/src/eval/mask_map.py", line 153, in run_official_scorer
+    raise EvalError(
+    ...<3 lines>...
+    )
+eval.mask_map.EvalError: official scorer failed (exit 1)
+stdout:
+
+stderr:
+[safe-delete][SAFE_DELETE_BULK_CONFIRM_REQUIRED] {"count":439,"threshold":50,"scope":"turn","targets":["/Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/reports/fold1_s640-1024/score.json"],"targetCount":1}
+
+error.json:
+

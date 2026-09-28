@@ -1,0 +1,3 @@
+  12/12 images
+wrote /var/folders/w8/nc6rj3f11jd_ttk_hc2yxz7h0000gn/T/night_repro_pdo4jimn/repro.json (12 images, 54 instances)
+repro check PASS: 12 images reproduced (5 weights, device=cpu); categories and RLE identical, max score delta 2e-06 <= 1e-05

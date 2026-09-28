@@ -1,0 +1,79 @@
+
+===== attempt 1 start 2026-09-27T23:10:44 =====
+
+==========================================================================
+  SUBMISSION IDENTITY  —  CHECK THIS AGAINST THE UPLOAD PAGE
+==========================================================================
+  competition id : GrapeFlowerSeg
+  name           : 阳光玫瑰葡萄花穗完整性判断与分割挑战赛
+  official page  : https://challenge.xfyun.cn/topic/info?type=GrapeFlowerSeg&option=ssgy
+  split          : testB
+  archive        : b_submission.zip  (root = result.json, solution_commit.txt)
+--------------------------------------------------------------------------
+  This is NOT:
+    - 824: 妮娜皇后葡萄果粒着色阶段分级
+      why it is different: 三分类 / Macro-F1 / 提交 predictions.csv —— 格式与本赛题完全不同
+    - 825: 复杂田间环境下妮娜皇后葡萄果粒实例分割挑战赛
+      why it is different: 同为实例分割，最易混淆；但类别与图像清单不同
+    - Spark-X2.5: Spark-X2.5 端侧模型创新挑战赛
+      why it is different: 完全不同的赛题，工作区另有目录
+==========================================================================
+  [OK ] competition id configured: GrapeFlowerSeg
+  [OK ] test manifest exists: /Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/data/manifests/images_test_b.json
+  [OK ] testB image count: manifest has 106, config expects 106
+  [OK ] image dimensions: all 106 are 2048x1152
+  [OK ] augmented pairing (53 + 53): 53 originals + 53 _aug1 copies
+  [OK ] test images present on disk: all 106 found under images
+
+[1/5] testB: 106 test images from images_test_b.json
+      staged fold0.pt (351,088,433 bytes)
+      staged fold1.pt (351,088,433 bytes)
+      staged fold2.pt (351,088,433 bytes)
+      staged fold3.pt (351,088,433 bytes)
+      staged fold4.pt (351,088,433 bytes)
+[2/5] solution.zip packed: 10 files, 1,633,666,575 bytes
+[3/5] solution_commit.txt: sha256=a731ccf1c12f7261... size=1,633,666,575
+[4/5] result.json from raw_predictions_testB_ensemble.json
+      106 image records, 641 instances, 543,946 bytes
+[5/5] packed b_submission.zip (183,940 bytes)
+verify PASS  b_submission.zip
+  images: 106   instances: 641
+  official validator: PASS
+  local checks: 6
+  all checks passed
+--- official validator ---
+格式校验通过；真实模型 SHA、字节数及结果复现将在赛后审核。
+{
+  "solution_commit": {
+    "solution_name": "solution.zip",
+    "hash_algorithm": "SHA-256",
+    "solution_sha256": "a731ccf1c12f72619eb6665b052a5ccbf9482630d7c8ba5511d604424d8c2f85",
+    "solution_size": "1633666575",
+    "b_data_version": "B-v1"
+  },
+  "validation": {
+    "version": "1.0",
+    "num_images": 106,
+    "num_predictions": 641,
+    "predictions_per_category": {
+      "0": {
+        "name": "完整花穗",
+        "count": 216
+      },
+      "1": {
+        "name": "不完整花穗",
+        "count": 425
+      }
+    },
+    "max_predictions_in_one_image": 16
+  }
+}
+
+✅ /Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/submissions/b_submission.zip
+   solution.zip      /Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/submissions/solution.zip
+   solution_commit   /Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/submissions/solution_commit.txt
+   result.json       /Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/submissions/result.json
+   identity record   /Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/submissions/SUBMISSION_IDENTITY.md
+
+   Upload ONLY the archive above, and confirm the platform shows
+   competition id = GrapeFlowerSeg.

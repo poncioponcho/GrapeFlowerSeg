@@ -1,0 +1,23 @@
+
+===== attempt 1 start 2026-09-27T23:05:38 =====
+device=mps  split=testB  images=106
+  loaded fold0.pt (short_side=640)
+  loaded fold1.pt (short_side=640)
+  loaded fold2.pt (short_side=640)
+  loaded fold3.pt (short_side=640)
+  loaded fold4.pt (short_side=640)
+  10/106  0.48 img/s  eta 3.3 min
+  20/106  0.45 img/s  eta 3.2 min
+  30/106  0.42 img/s  eta 3.0 min
+  40/106  0.40 img/s  eta 2.7 min
+  50/106  0.39 img/s  eta 2.4 min
+  60/106  0.38 img/s  eta 2.0 min
+  70/106  0.38 img/s  eta 1.6 min
+  80/106  0.37 img/s  eta 1.2 min
+  90/106  0.37 img/s  eta 0.7 min
+  100/106  0.36 img/s  eta 0.3 min
+  106/106  0.35 img/s  eta 0.0 min
+
+wrote outputs/predictions/raw_predictions_testB_ensemble.json
+  106 images, 641 instances, 0 images with no detection
+  next: python scripts/build_submission.py --predictions outputs/predictions/raw_predictions_testB_ensemble.json

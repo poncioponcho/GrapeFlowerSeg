@@ -1,0 +1,21 @@
+device=mps  split=testB  images=106
+  loaded fold0.pt (infer short_side=[640, 1024] (trained at 640))
+  loaded fold1.pt (infer short_side=[640, 1024] (trained at 640))
+  loaded fold2.pt (infer short_side=[640, 1024] (trained at 640))
+  loaded fold3.pt (infer short_side=[640, 1024] (trained at 640))
+  loaded fold4.pt (infer short_side=[640, 1024] (trained at 640))
+  10/106  0.11 img/s  eta 14.4 min
+  20/106  0.11 img/s  eta 12.5 min
+  30/106  0.12 img/s  eta 10.5 min
+  40/106  0.14 img/s  eta 7.7 min
+  50/106  0.16 img/s  eta 5.8 min
+  60/106  0.17 img/s  eta 4.4 min
+  70/106  0.18 img/s  eta 3.4 min
+  80/106  0.18 img/s  eta 2.4 min
+  90/106  0.19 img/s  eta 1.4 min
+  100/106  0.19 img/s  eta 0.5 min
+  106/106  0.19 img/s  eta 0.0 min
+
+wrote outputs/predictions/raw_predictions_testB_ensemble_ms.json
+  106 images, 683 instances, 0 images with no detection
+  next: python scripts/build_submission.py --predictions outputs/predictions/raw_predictions_testB_ensemble_ms.json

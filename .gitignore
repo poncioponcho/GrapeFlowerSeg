@@ -9,45 +9,36 @@ venv/
 .pytest_tmp/
 .pytest_cache/
 
-# Assistant workspace state - not part of the project
-.workbuddy-ai/
+# Scratch left behind by build_submission.py (staged weight copies)
+/outputs/staging/
 
 # ---------------------------------------------------------------------------
-# Competition data - NEVER publish
+# Too large for GitHub - a size limit, NOT a privacy decision
 # ---------------------------------------------------------------------------
-# The dataset is provided by the organiser under the competition's terms.
-# Redistributing it (especially the B-board test images) would breach those
-# terms, and the archives are hundreds of MB on top. Download it from the
-# official page instead; manifests and fold splits are regenerated with
-# `make data` / `make split`.
+# GitHub refuses any file over 100 MB, and that limit applies to private
+# repositories too. These nine files therefore stay local; back them up on an
+# external drive or object storage, or move them to Git LFS (not installed
+# here, and the free tier's 1 GB does not cover the ~5.6 GB they need).
 #
-# Anchored with a leading slash on purpose: a bare `data/` also matches
-# src/data/, which silently dropped two load-bearing modules
-# (coco.py, split_by_source.py) from the first published commit.
-/data/
-
-# ---------------------------------------------------------------------------
-# Trained artefacts and submission packages - NEVER publish
-# ---------------------------------------------------------------------------
-# One checkpoint is 351 MB (over GitHub's 100 MB per-file limit) and each
-# packed solution.zip is ~1.6 GB. They belong in the post-competition review
-# channel, not in a public repository. Anchored for the same reason as /data/.
-/outputs/
+# NOTE: a bare `data/` pattern also matches src/data/ and silently dropped two
+# load-bearing modules (coco.py, split_by_source.py) from the first published
+# commit. Always anchor directory patterns with a leading slash.
+#
+# NOTE: .gitignore has no inline comments - a trailing `# 553 MB` becomes part
+# of the pattern and the rule silently stops matching. Keep comments on their
+# own lines.
+#
+#   /data/raw/训练集A.zip                          553 MB
+#   /outputs/checkpoints/                          6 x 335 MB
+#   /outputs/submissions/submission*/solution.zip  2 x 1.5 GB
+/data/raw/训练集A.zip
+/outputs/checkpoints/
+/outputs/submissions/submission*/solution.zip
 solution/model/*.pt
 
-# ---------------------------------------------------------------------------
-# The organiser's own scripts - NOT ours to redistribute
-# ---------------------------------------------------------------------------
-# src/eval/official_oracle/ and src/submit/official/ hold byte-for-byte copies
-# of the scorer/validator shipped in the official submission kit. They are
-# third-party code, so they stay out of a public repo; copy them back from the
-# kit to re-run the freeze tests (`src/official_freeze.json` records the SHA-256
-# each one must have).
-src/eval/official_oracle/
-src/submit/official/
-
-# Artefacts belonging to a different (abandoned) competition
-archive/classification_berry/leftover_submissions/
+# Everything else is tracked - including the competition data, the frozen
+# official scripts and the assistant's project notes. This repository is
+# private and holds no credentials (checked by a project-wide scan).
 
 # OS
 .DS_Store

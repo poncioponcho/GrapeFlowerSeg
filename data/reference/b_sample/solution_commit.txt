@@ -1,0 +1,5 @@
+solution_name=solution.zip
+hash_algorithm=SHA-256
+solution_sha256=04c1dd7aa70832be3bc1b97a2a1cbcf96ea91515dc473d78f92793171f983e36
+solution_size=1990
+b_data_version=B-v1

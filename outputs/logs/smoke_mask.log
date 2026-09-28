@@ -1,0 +1,5 @@
+device=mps  folds=[0]  images=702  annotations=1602
+  fold 0: 560 train / 142 val images @ short_side=384
+  target contract OK: masks (2, 384, 683), boxes (2, 4), labels [0, 1]
+    epoch 1/1 step 20/280 loss=0.9122 [box_reg=0.073 classifier=0.227 mask=0.516 objectness=0.084 rpn_box_reg=0.012] 0.55 it/s eta 7.9 min
+    epoch 1/1 step 40/280 loss=0.7216 [box_reg=0.084 classifier=0.163 mask=0.406 objectness=0.058 rpn_box_reg=0.010] 0.55 it/s eta 7.3 min

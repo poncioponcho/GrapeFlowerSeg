@@ -1,0 +1,7 @@
+grouped 5-fold by source image  (seed=42)
+fold   #train    #val  #src_train   #src_val
+   0      560     142         280         71
+   1      562     140         281         70
+   2      562     140         281         70
+   3      562     140         281         70
+   4      562     140         281         70

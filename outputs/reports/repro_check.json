@@ -1,0 +1,9 @@
+{
+  "checked_images": 12,
+  "score_tolerance": 1e-05,
+  "mask_iou_tolerance": 0.995,
+  "max_score_delta": 2.000000000002e-06,
+  "min_mask_iou": 0.9984946560289026,
+  "mismatches": [],
+  "ok": true
+}

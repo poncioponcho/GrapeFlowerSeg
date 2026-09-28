@@ -1,0 +1,28 @@
+{
+  "mask_map": 0.36834791563913777,
+  "mask_map_50": null,
+  "mask_map_75": null,
+  "num_images": 140,
+  "num_predictions": 574,
+  "max_predictions_in_one_image": 12,
+  "per_category": {
+    "0": {
+      "name": "完整花穗",
+      "submission_category_id": 0,
+      "gt_category_id": 1,
+      "AP_50_95": 0.40149920704075465,
+      "AP50": 0.8353114115413913,
+      "AP75": 0.2864446091086532,
+      "AR_50_95": 0.512962962962963
+    },
+    "1": {
+      "name": "不完整花穗",
+      "submission_category_id": 1,
+      "gt_category_id": 2,
+      "AP_50_95": 0.3351966242375208,
+      "AP50": 0.6871398517692107,
+      "AP75": 0.23972536749516135,
+      "AR_50_95": 0.4366279069767442
+    }
+  }
+}

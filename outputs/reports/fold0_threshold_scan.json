@@ -1,0 +1,46 @@
+{
+  "input": "outputs/reports/fold0/result.json",
+  "input_instances": 590,
+  "rows": [
+    {
+      "threshold": 0.05,
+      "mask_map": 0.3433859283803318,
+      "num_predictions": 590
+    },
+    {
+      "threshold": 0.1,
+      "mask_map": 0.33740732172316046,
+      "num_predictions": 538
+    },
+    {
+      "threshold": 0.15,
+      "mask_map": 0.3322556633933638,
+      "num_predictions": 511
+    },
+    {
+      "threshold": 0.2,
+      "mask_map": 0.3288629502688551,
+      "num_predictions": 487
+    },
+    {
+      "threshold": 0.3,
+      "mask_map": 0.32452906961492717,
+      "num_predictions": 452
+    },
+    {
+      "threshold": 0.4,
+      "mask_map": 0.3168337810477632,
+      "num_predictions": 428
+    },
+    {
+      "threshold": 0.5,
+      "mask_map": 0.3113951558617605,
+      "num_predictions": 401
+    }
+  ],
+  "best": {
+    "threshold": 0.05,
+    "mask_map": 0.3433859283803318,
+    "num_predictions": 590
+  }
+}

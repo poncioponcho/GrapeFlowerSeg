@@ -1,0 +1,2 @@
+numpy==1.26.4
+pycocotools==2.0.10

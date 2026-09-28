@@ -1,0 +1,200 @@
+device=mps  folds=[0]  images=702  annotations=1602
+  fold 0: 560 train / 142 val images @ short_side=640
+  target contract OK: masks (2, 640, 1138), boxes (2, 4), labels [1, 2] (num_classes=3)
+    epoch 1/12 step 20/280 loss=1.2552 [box_reg=0.118 classifier=0.247 mask=0.775 objectness=0.105 rpn_box_reg=0.010] 0.31 it/s eta 14.1 min
+    epoch 1/12 step 40/280 loss=1.0678 [box_reg=0.200 classifier=0.243 mask=0.548 objectness=0.066 rpn_box_reg=0.010] 0.26 it/s eta 15.5 min
+    epoch 1/12 step 60/280 loss=0.9467 [box_reg=0.214 classifier=0.218 mask=0.455 objectness=0.051 rpn_box_reg=0.009] 0.24 it/s eta 15.4 min
+    epoch 1/12 step 80/280 loss=0.8662 [box_reg=0.208 classifier=0.203 mask=0.405 objectness=0.041 rpn_box_reg=0.008] 0.24 it/s eta 14.0 min
+    epoch 1/12 step 100/280 loss=0.8192 [box_reg=0.204 classifier=0.198 mask=0.374 objectness=0.036 rpn_box_reg=0.008] 0.24 it/s eta 12.5 min
+    epoch 1/12 step 120/280 loss=0.7871 [box_reg=0.200 classifier=0.193 mask=0.354 objectness=0.032 rpn_box_reg=0.008] 0.24 it/s eta 11.0 min
+    epoch 1/12 step 140/280 loss=0.7651 [box_reg=0.199 classifier=0.193 mask=0.336 objectness=0.029 rpn_box_reg=0.008] 0.24 it/s eta 9.6 min
+    epoch 1/12 step 160/280 loss=0.7464 [box_reg=0.198 classifier=0.191 mask=0.323 objectness=0.027 rpn_box_reg=0.007] 0.24 it/s eta 8.5 min
+    epoch 1/12 step 180/280 loss=0.7233 [box_reg=0.193 classifier=0.186 mask=0.312 objectness=0.025 rpn_box_reg=0.007] 0.24 it/s eta 7.0 min
+    epoch 1/12 step 200/280 loss=0.7100 [box_reg=0.191 classifier=0.185 mask=0.304 objectness=0.023 rpn_box_reg=0.007] 0.24 it/s eta 5.6 min
+    epoch 1/12 step 220/280 loss=0.6959 [box_reg=0.188 classifier=0.182 mask=0.297 objectness=0.022 rpn_box_reg=0.007] 0.24 it/s eta 4.2 min
+    epoch 1/12 step 240/280 loss=0.6831 [box_reg=0.186 classifier=0.180 mask=0.290 objectness=0.021 rpn_box_reg=0.007] 0.24 it/s eta 2.7 min
+    epoch 1/12 step 260/280 loss=0.6748 [box_reg=0.184 classifier=0.180 mask=0.285 objectness=0.020 rpn_box_reg=0.007] 0.25 it/s eta 1.3 min
+    epoch 1/12 step 280/280 loss=0.6639 [box_reg=0.181 classifier=0.177 mask=0.280 objectness=0.019 rpn_box_reg=0.006] 0.25 it/s eta 0.0 min
+  fold 0 epoch 1/12 done in 1112s, mean loss 0.6639 [box_reg=0.1808 classifier=0.1773 mask=0.2799 objectness=0.0193 rpn_box_reg=0.0065]
+  fold 0 checkpoint saved -> fold0.pt (epoch 1)
+    epoch 2/12 step 20/280 loss=0.5614 [box_reg=0.157 classifier=0.168 mask=0.227 objectness=0.005 rpn_box_reg=0.005] 0.27 it/s eta 15.9 min
+    epoch 2/12 step 40/280 loss=0.5374 [box_reg=0.153 classifier=0.159 mask=0.217 objectness=0.004 rpn_box_reg=0.004] 0.26 it/s eta 15.2 min
+    epoch 2/12 step 60/280 loss=0.5173 [box_reg=0.147 classifier=0.150 mask=0.212 objectness=0.004 rpn_box_reg=0.004] 0.25 it/s eta 14.8 min
+    epoch 2/12 step 80/280 loss=0.5182 [box_reg=0.147 classifier=0.148 mask=0.214 objectness=0.005 rpn_box_reg=0.004] 0.25 it/s eta 13.5 min
+    epoch 2/12 step 100/280 loss=0.5100 [box_reg=0.145 classifier=0.144 mask=0.212 objectness=0.005 rpn_box_reg=0.004] 0.24 it/s eta 12.3 min
+    epoch 2/12 step 120/280 loss=0.5039 [box_reg=0.143 classifier=0.141 mask=0.211 objectness=0.005 rpn_box_reg=0.004] 0.24 it/s eta 11.0 min
+    epoch 2/12 step 140/280 loss=0.5024 [box_reg=0.143 classifier=0.141 mask=0.210 objectness=0.005 rpn_box_reg=0.004] 0.24 it/s eta 9.5 min
+    epoch 2/12 step 160/280 loss=0.4994 [box_reg=0.144 classifier=0.139 mask=0.207 objectness=0.005 rpn_box_reg=0.004] 0.26 it/s eta 7.8 min
+    epoch 2/12 step 180/280 loss=0.4940 [box_reg=0.142 classifier=0.138 mask=0.206 objectness=0.005 rpn_box_reg=0.004] 0.26 it/s eta 6.4 min
+    epoch 2/12 step 200/280 loss=0.4974 [box_reg=0.143 classifier=0.140 mask=0.206 objectness=0.005 rpn_box_reg=0.004] 0.27 it/s eta 5.0 min
+    epoch 2/12 step 220/280 loss=0.4969 [box_reg=0.142 classifier=0.139 mask=0.207 objectness=0.005 rpn_box_reg=0.004] 0.28 it/s eta 3.6 min
+    epoch 2/12 step 240/280 loss=0.4996 [box_reg=0.143 classifier=0.141 mask=0.207 objectness=0.005 rpn_box_reg=0.004] 0.28 it/s eta 2.4 min
+    epoch 2/12 step 260/280 loss=0.4978 [box_reg=0.142 classifier=0.140 mask=0.206 objectness=0.005 rpn_box_reg=0.004] 0.29 it/s eta 1.2 min
+    epoch 2/12 step 280/280 loss=0.4956 [box_reg=0.141 classifier=0.139 mask=0.206 objectness=0.005 rpn_box_reg=0.004] 0.29 it/s eta 0.0 min
+  fold 0 epoch 2/12 done in 963s, mean loss 0.4956 [box_reg=0.1411 classifier=0.1394 mask=0.2060 objectness=0.0049 rpn_box_reg=0.0042]
+  fold 0 checkpoint saved -> fold0.pt (epoch 2)
+    epoch 3/12 step 20/280 loss=0.4898 [box_reg=0.150 classifier=0.135 mask=0.199 objectness=0.002 rpn_box_reg=0.003] 0.31 it/s eta 14.0 min
+    epoch 3/12 step 40/280 loss=0.4557 [box_reg=0.133 classifier=0.122 mask=0.194 objectness=0.003 rpn_box_reg=0.003] 0.32 it/s eta 12.6 min
+    epoch 3/12 step 60/280 loss=0.4570 [box_reg=0.131 classifier=0.126 mask=0.194 objectness=0.003 rpn_box_reg=0.003] 0.31 it/s eta 11.8 min
+    epoch 3/12 step 80/280 loss=0.4532 [box_reg=0.130 classifier=0.125 mask=0.192 objectness=0.003 rpn_box_reg=0.003] 0.29 it/s eta 11.6 min
+    epoch 3/12 step 100/280 loss=0.4540 [box_reg=0.130 classifier=0.124 mask=0.195 objectness=0.003 rpn_box_reg=0.003] 0.27 it/s eta 11.2 min
+    epoch 3/12 step 120/280 loss=0.4460 [box_reg=0.125 classifier=0.120 mask=0.195 objectness=0.003 rpn_box_reg=0.003] 0.26 it/s eta 10.1 min
+    epoch 3/12 step 140/280 loss=0.4418 [box_reg=0.124 classifier=0.118 mask=0.194 objectness=0.003 rpn_box_reg=0.003] 0.26 it/s eta 8.8 min
+    epoch 3/12 step 160/280 loss=0.4397 [box_reg=0.123 classifier=0.118 mask=0.194 objectness=0.003 rpn_box_reg=0.003] 0.26 it/s eta 7.7 min
+    epoch 3/12 step 180/280 loss=0.4434 [box_reg=0.125 classifier=0.119 mask=0.194 objectness=0.003 rpn_box_reg=0.003] 0.26 it/s eta 6.5 min
+    epoch 3/12 step 200/280 loss=0.4407 [box_reg=0.123 classifier=0.117 mask=0.194 objectness=0.003 rpn_box_reg=0.003] 0.25 it/s eta 5.3 min
+    epoch 3/12 step 220/280 loss=0.4400 [box_reg=0.123 classifier=0.117 mask=0.195 objectness=0.003 rpn_box_reg=0.003] 0.26 it/s eta 3.9 min
+    epoch 3/12 step 240/280 loss=0.4413 [box_reg=0.122 classifier=0.118 mask=0.195 objectness=0.003 rpn_box_reg=0.003] 0.25 it/s eta 2.7 min
+    epoch 3/12 step 260/280 loss=0.4452 [box_reg=0.123 classifier=0.119 mask=0.197 objectness=0.003 rpn_box_reg=0.003] 0.25 it/s eta 1.3 min
+    epoch 3/12 step 280/280 loss=0.4458 [box_reg=0.123 classifier=0.120 mask=0.196 objectness=0.003 rpn_box_reg=0.003] 0.25 it/s eta 0.0 min
+  fold 0 epoch 3/12 done in 1114s, mean loss 0.4458 [box_reg=0.1235 classifier=0.1199 mask=0.1961 objectness=0.0030 rpn_box_reg=0.0033]
+  fold 0 checkpoint saved -> fold0.pt (epoch 3)
+    epoch 4/12 step 20/280 loss=0.3826 [box_reg=0.095 classifier=0.096 mask=0.185 objectness=0.004 rpn_box_reg=0.003] 0.23 it/s eta 19.0 min
+    epoch 4/12 step 40/280 loss=0.3847 [box_reg=0.104 classifier=0.092 mask=0.184 objectness=0.003 rpn_box_reg=0.003] 0.23 it/s eta 17.3 min
+    epoch 4/12 step 60/280 loss=0.3846 [box_reg=0.102 classifier=0.093 mask=0.185 objectness=0.003 rpn_box_reg=0.003] 0.23 it/s eta 15.8 min
+    epoch 4/12 step 80/280 loss=0.3818 [box_reg=0.098 classifier=0.094 mask=0.185 objectness=0.002 rpn_box_reg=0.003] 0.23 it/s eta 14.3 min
+    epoch 4/12 step 100/280 loss=0.3866 [box_reg=0.101 classifier=0.096 mask=0.185 objectness=0.002 rpn_box_reg=0.003] 0.24 it/s eta 12.3 min
+    epoch 4/12 step 120/280 loss=0.3920 [box_reg=0.102 classifier=0.097 mask=0.187 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 10.8 min
+    epoch 4/12 step 140/280 loss=0.3923 [box_reg=0.102 classifier=0.099 mask=0.186 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 9.5 min
+    epoch 4/12 step 160/280 loss=0.3915 [box_reg=0.103 classifier=0.098 mask=0.186 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 8.1 min
+    epoch 4/12 step 180/280 loss=0.3906 [box_reg=0.103 classifier=0.097 mask=0.186 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 6.7 min
+    epoch 4/12 step 200/280 loss=0.3970 [box_reg=0.105 classifier=0.100 mask=0.187 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 5.4 min
+    epoch 4/12 step 220/280 loss=0.3965 [box_reg=0.104 classifier=0.101 mask=0.187 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 4.0 min
+    epoch 4/12 step 240/280 loss=0.3944 [box_reg=0.103 classifier=0.100 mask=0.187 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 2.7 min
+    epoch 4/12 step 260/280 loss=0.3980 [box_reg=0.106 classifier=0.100 mask=0.187 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 1.4 min
+    epoch 4/12 step 280/280 loss=0.3983 [box_reg=0.106 classifier=0.100 mask=0.188 objectness=0.002 rpn_box_reg=0.003] 0.25 it/s eta 0.0 min
+  fold 0 epoch 4/12 done in 1137s, mean loss 0.3983 [box_reg=0.1060 classifier=0.0999 mask=0.1877 objectness=0.0021 rpn_box_reg=0.0027]
+  fold 0 checkpoint saved -> fold0.pt (epoch 4)
+    epoch 5/12 step 20/280 loss=0.3656 [box_reg=0.089 classifier=0.101 mask=0.172 objectness=0.001 rpn_box_reg=0.002] 0.28 it/s eta 15.3 min
+    epoch 5/12 step 40/280 loss=0.3582 [box_reg=0.088 classifier=0.095 mask=0.172 objectness=0.001 rpn_box_reg=0.002] 0.28 it/s eta 14.5 min
+    epoch 5/12 step 60/280 loss=0.3478 [box_reg=0.086 classifier=0.084 mask=0.175 objectness=0.001 rpn_box_reg=0.002] 0.26 it/s eta 14.2 min
+    epoch 5/12 step 80/280 loss=0.3569 [box_reg=0.090 classifier=0.087 mask=0.177 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 13.1 min
+    epoch 5/12 step 100/280 loss=0.3600 [box_reg=0.090 classifier=0.089 mask=0.177 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 11.8 min
+    epoch 5/12 step 120/280 loss=0.3622 [box_reg=0.092 classifier=0.088 mask=0.180 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 10.5 min
+    epoch 5/12 step 140/280 loss=0.3659 [box_reg=0.094 classifier=0.087 mask=0.181 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 9.2 min
+    epoch 5/12 step 160/280 loss=0.3691 [box_reg=0.095 classifier=0.088 mask=0.183 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 7.9 min
+    epoch 5/12 step 180/280 loss=0.3659 [box_reg=0.093 classifier=0.086 mask=0.183 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 6.6 min
+    epoch 5/12 step 200/280 loss=0.3658 [box_reg=0.094 classifier=0.085 mask=0.183 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 5.4 min
+    epoch 5/12 step 220/280 loss=0.3631 [box_reg=0.092 classifier=0.085 mask=0.182 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 4.0 min
+    epoch 5/12 step 240/280 loss=0.3627 [box_reg=0.093 classifier=0.085 mask=0.182 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 2.7 min
+    epoch 5/12 step 260/280 loss=0.3613 [box_reg=0.092 classifier=0.084 mask=0.181 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 1.3 min
+    epoch 5/12 step 280/280 loss=0.3605 [box_reg=0.092 classifier=0.084 mask=0.181 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 0.0 min
+  fold 0 epoch 5/12 done in 1126s, mean loss 0.3605 [box_reg=0.0920 classifier=0.0843 mask=0.1806 objectness=0.0013 rpn_box_reg=0.0023]
+  fold 0 checkpoint saved -> fold0.pt (epoch 5)
+    epoch 6/12 step 20/280 loss=0.2896 [box_reg=0.061 classifier=0.059 mask=0.168 objectness=0.001 rpn_box_reg=0.001] 0.24 it/s eta 17.7 min
+    epoch 6/12 step 40/280 loss=0.2979 [box_reg=0.065 classifier=0.057 mask=0.174 objectness=0.001 rpn_box_reg=0.002] 0.24 it/s eta 16.5 min
+    epoch 6/12 step 60/280 loss=0.3009 [box_reg=0.068 classifier=0.055 mask=0.175 objectness=0.001 rpn_box_reg=0.002] 0.24 it/s eta 15.1 min
+    epoch 6/12 step 80/280 loss=0.3053 [box_reg=0.068 classifier=0.060 mask=0.175 objectness=0.001 rpn_box_reg=0.001] 0.25 it/s eta 13.5 min
+    epoch 6/12 step 100/280 loss=0.3123 [box_reg=0.071 classifier=0.062 mask=0.178 objectness=0.001 rpn_box_reg=0.002] 0.25 it/s eta 11.8 min
+    epoch 6/12 step 120/280 loss=0.3122 [box_reg=0.072 classifier=0.060 mask=0.178 objectness=0.001 rpn_box_reg=0.002] 0.26 it/s eta 10.4 min
+    epoch 6/12 step 140/280 loss=0.3156 [box_reg=0.074 classifier=0.062 mask=0.178 objectness=0.001 rpn_box_reg=0.002] 0.26 it/s eta 9.1 min
+    epoch 6/12 step 160/280 loss=0.3249 [box_reg=0.078 classifier=0.065 mask=0.178 objectness=0.001 rpn_box_reg=0.002] 0.26 it/s eta 7.7 min
+    epoch 6/12 step 180/280 loss=0.3277 [box_reg=0.081 classifier=0.066 mask=0.178 objectness=0.001 rpn_box_reg=0.002] 0.27 it/s eta 6.2 min
+    epoch 6/12 step 200/280 loss=0.3244 [box_reg=0.079 classifier=0.065 mask=0.177 objectness=0.001 rpn_box_reg=0.002] 0.28 it/s eta 4.8 min
+    epoch 6/12 step 220/280 loss=0.3265 [box_reg=0.080 classifier=0.066 mask=0.177 objectness=0.001 rpn_box_reg=0.002] 0.28 it/s eta 3.6 min
+    epoch 6/12 step 240/280 loss=0.3292 [box_reg=0.082 classifier=0.067 mask=0.178 objectness=0.001 rpn_box_reg=0.002] 0.28 it/s eta 2.4 min
+    epoch 6/12 step 260/280 loss=0.3293 [box_reg=0.081 classifier=0.069 mask=0.177 objectness=0.001 rpn_box_reg=0.002] 0.28 it/s eta 1.2 min
+    epoch 6/12 step 280/280 loss=0.3296 [box_reg=0.081 classifier=0.069 mask=0.177 objectness=0.001 rpn_box_reg=0.002] 0.29 it/s eta 0.0 min
+  fold 0 epoch 6/12 done in 980s, mean loss 0.3296 [box_reg=0.0807 classifier=0.0685 mask=0.1774 objectness=0.0010 rpn_box_reg=0.0019]
+  fold 0 checkpoint saved -> fold0.pt (epoch 6)
+    epoch 7/12 step 20/280 loss=0.3128 [box_reg=0.076 classifier=0.067 mask=0.168 objectness=0.001 rpn_box_reg=0.002] 0.32 it/s eta 13.6 min
+    epoch 7/12 step 40/280 loss=0.3201 [box_reg=0.079 classifier=0.065 mask=0.173 objectness=0.001 rpn_box_reg=0.002] 0.32 it/s eta 12.7 min
+    epoch 7/12 step 60/280 loss=0.3094 [box_reg=0.075 classifier=0.060 mask=0.172 objectness=0.001 rpn_box_reg=0.002] 0.31 it/s eta 11.7 min
+    epoch 7/12 step 80/280 loss=0.3032 [box_reg=0.072 classifier=0.056 mask=0.173 objectness=0.001 rpn_box_reg=0.002] 0.31 it/s eta 10.9 min
+    epoch 7/12 step 100/280 loss=0.3023 [box_reg=0.072 classifier=0.056 mask=0.173 objectness=0.001 rpn_box_reg=0.002] 0.30 it/s eta 9.9 min
+    epoch 7/12 step 120/280 loss=0.3022 [box_reg=0.070 classifier=0.055 mask=0.175 objectness=0.001 rpn_box_reg=0.002] 0.30 it/s eta 8.8 min
+    epoch 7/12 step 140/280 loss=0.3022 [box_reg=0.069 classifier=0.056 mask=0.175 objectness=0.001 rpn_box_reg=0.002] 0.30 it/s eta 7.8 min
+    epoch 7/12 step 160/280 loss=0.3047 [box_reg=0.070 classifier=0.058 mask=0.174 objectness=0.001 rpn_box_reg=0.002] 0.30 it/s eta 6.7 min
+    epoch 7/12 step 180/280 loss=0.3045 [box_reg=0.069 classifier=0.058 mask=0.174 objectness=0.001 rpn_box_reg=0.002] 0.29 it/s eta 5.7 min
+    epoch 7/12 step 200/280 loss=0.3041 [box_reg=0.069 classifier=0.059 mask=0.173 objectness=0.001 rpn_box_reg=0.002] 0.29 it/s eta 4.6 min
+    epoch 7/12 step 220/280 loss=0.3030 [box_reg=0.069 classifier=0.059 mask=0.172 objectness=0.001 rpn_box_reg=0.002] 0.29 it/s eta 3.5 min
+    epoch 7/12 step 240/280 loss=0.3018 [box_reg=0.068 classifier=0.058 mask=0.173 objectness=0.001 rpn_box_reg=0.002] 0.29 it/s eta 2.3 min
+    epoch 7/12 step 260/280 loss=0.3011 [box_reg=0.068 classifier=0.057 mask=0.174 objectness=0.001 rpn_box_reg=0.002] 0.28 it/s eta 1.2 min
+    epoch 7/12 step 280/280 loss=0.3003 [box_reg=0.067 classifier=0.057 mask=0.174 objectness=0.001 rpn_box_reg=0.002] 0.28 it/s eta 0.0 min
+  fold 0 epoch 7/12 done in 992s, mean loss 0.3003 [box_reg=0.0674 classifier=0.0565 mask=0.1739 objectness=0.0009 rpn_box_reg=0.0015]
+  fold 0 checkpoint saved -> fold0.pt (epoch 7)
+    epoch 8/12 step 20/280 loss=0.2690 [box_reg=0.065 classifier=0.039 mask=0.163 objectness=0.001 rpn_box_reg=0.001] 0.27 it/s eta 16.1 min
+    epoch 8/12 step 40/280 loss=0.2574 [box_reg=0.058 classifier=0.036 mask=0.162 objectness=0.001 rpn_box_reg=0.001] 0.27 it/s eta 14.9 min
+    epoch 8/12 step 60/280 loss=0.2604 [box_reg=0.057 classifier=0.037 mask=0.164 objectness=0.001 rpn_box_reg=0.001] 0.27 it/s eta 13.7 min
+    epoch 8/12 step 80/280 loss=0.2644 [box_reg=0.059 classifier=0.037 mask=0.166 objectness=0.001 rpn_box_reg=0.001] 0.26 it/s eta 12.9 min
+    epoch 8/12 step 100/280 loss=0.2657 [box_reg=0.059 classifier=0.039 mask=0.166 objectness=0.001 rpn_box_reg=0.001] 0.26 it/s eta 11.6 min
+    epoch 8/12 step 120/280 loss=0.2704 [box_reg=0.059 classifier=0.042 mask=0.167 objectness=0.001 rpn_box_reg=0.001] 0.26 it/s eta 10.4 min
+    epoch 8/12 step 140/280 loss=0.2771 [box_reg=0.061 classifier=0.047 mask=0.167 objectness=0.001 rpn_box_reg=0.001] 0.26 it/s eta 9.1 min
+    epoch 8/12 step 160/280 loss=0.2790 [box_reg=0.062 classifier=0.047 mask=0.168 objectness=0.001 rpn_box_reg=0.001] 0.25 it/s eta 7.9 min
+    epoch 8/12 step 180/280 loss=0.2810 [box_reg=0.063 classifier=0.048 mask=0.168 objectness=0.001 rpn_box_reg=0.001] 0.25 it/s eta 6.6 min
+    epoch 8/12 step 200/280 loss=0.2791 [box_reg=0.062 classifier=0.048 mask=0.168 objectness=0.001 rpn_box_reg=0.001] 0.25 it/s eta 5.3 min
+    epoch 8/12 step 220/280 loss=0.2800 [box_reg=0.062 classifier=0.047 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.25 it/s eta 4.0 min
+    epoch 8/12 step 240/280 loss=0.2782 [box_reg=0.061 classifier=0.046 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.25 it/s eta 2.7 min
+    epoch 8/12 step 260/280 loss=0.2784 [box_reg=0.061 classifier=0.046 mask=0.170 objectness=0.001 rpn_box_reg=0.001] 0.25 it/s eta 1.3 min
+    epoch 8/12 step 280/280 loss=0.2775 [box_reg=0.061 classifier=0.045 mask=0.170 objectness=0.001 rpn_box_reg=0.001] 0.25 it/s eta 0.0 min
+  fold 0 epoch 8/12 done in 1134s, mean loss 0.2775 [box_reg=0.0607 classifier=0.0447 mask=0.1701 objectness=0.0007 rpn_box_reg=0.0013]
+  fold 0 checkpoint saved -> fold0.pt (epoch 8)
+    epoch 9/12 step 20/280 loss=0.2635 [box_reg=0.059 classifier=0.038 mask=0.164 objectness=0.001 rpn_box_reg=0.002] 0.24 it/s eta 18.4 min
+    epoch 9/12 step 40/280 loss=0.2547 [box_reg=0.051 classifier=0.039 mask=0.163 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 17.1 min
+    epoch 9/12 step 60/280 loss=0.2685 [box_reg=0.054 classifier=0.044 mask=0.168 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 15.6 min
+    epoch 9/12 step 80/280 loss=0.2681 [box_reg=0.056 classifier=0.042 mask=0.168 objectness=0.001 rpn_box_reg=0.001] 0.24 it/s eta 14.1 min
+    epoch 9/12 step 100/280 loss=0.2658 [box_reg=0.055 classifier=0.040 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.24 it/s eta 12.7 min
+    epoch 9/12 step 120/280 loss=0.2652 [box_reg=0.054 classifier=0.040 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 11.4 min
+    epoch 9/12 step 140/280 loss=0.2626 [box_reg=0.053 classifier=0.038 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 10.0 min
+    epoch 9/12 step 160/280 loss=0.2626 [box_reg=0.053 classifier=0.038 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 8.5 min
+    epoch 9/12 step 180/280 loss=0.2606 [box_reg=0.052 classifier=0.038 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 7.1 min
+    epoch 9/12 step 200/280 loss=0.2607 [box_reg=0.052 classifier=0.038 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 5.7 min
+    epoch 9/12 step 220/280 loss=0.2591 [box_reg=0.051 classifier=0.037 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 4.3 min
+    epoch 9/12 step 240/280 loss=0.2576 [box_reg=0.051 classifier=0.037 mask=0.168 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 2.9 min
+    epoch 9/12 step 260/280 loss=0.2586 [box_reg=0.051 classifier=0.037 mask=0.169 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 1.4 min
+    epoch 9/12 step 280/280 loss=0.2573 [box_reg=0.051 classifier=0.037 mask=0.168 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 0.0 min
+  fold 0 epoch 9/12 done in 1204s, mean loss 0.2573 [box_reg=0.0508 classifier=0.0365 mask=0.1681 objectness=0.0008 rpn_box_reg=0.0011]
+  fold 0 checkpoint saved -> fold0.pt (epoch 9)
+    epoch 10/12 step 20/280 loss=0.2486 [box_reg=0.047 classifier=0.032 mask=0.167 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 18.8 min
+    epoch 10/12 step 40/280 loss=0.2393 [box_reg=0.043 classifier=0.030 mask=0.165 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 17.5 min
+    epoch 10/12 step 60/280 loss=0.2367 [box_reg=0.043 classifier=0.029 mask=0.164 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 16.1 min
+    epoch 10/12 step 80/280 loss=0.2370 [box_reg=0.043 classifier=0.028 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 14.8 min
+    epoch 10/12 step 100/280 loss=0.2367 [box_reg=0.042 classifier=0.027 mask=0.166 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 13.1 min
+    epoch 10/12 step 120/280 loss=0.2422 [box_reg=0.043 classifier=0.029 mask=0.168 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 11.7 min
+    epoch 10/12 step 140/280 loss=0.2407 [box_reg=0.043 classifier=0.029 mask=0.167 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 10.2 min
+    epoch 10/12 step 160/280 loss=0.2395 [box_reg=0.043 classifier=0.030 mask=0.165 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 8.8 min
+    epoch 10/12 step 180/280 loss=0.2410 [box_reg=0.044 classifier=0.030 mask=0.166 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 7.3 min
+    epoch 10/12 step 200/280 loss=0.2401 [box_reg=0.044 classifier=0.030 mask=0.165 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 5.8 min
+    epoch 10/12 step 220/280 loss=0.2404 [box_reg=0.043 classifier=0.029 mask=0.167 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 4.4 min
+    epoch 10/12 step 240/280 loss=0.2405 [box_reg=0.043 classifier=0.029 mask=0.167 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 2.9 min
+    epoch 10/12 step 260/280 loss=0.2411 [box_reg=0.044 classifier=0.029 mask=0.167 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 1.5 min
+    epoch 10/12 step 280/280 loss=0.2404 [box_reg=0.043 classifier=0.029 mask=0.166 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 0.0 min
+  fold 0 epoch 10/12 done in 1229s, mean loss 0.2404 [box_reg=0.0434 classifier=0.0294 mask=0.1661 objectness=0.0005 rpn_box_reg=0.0010]
+  fold 0 checkpoint saved -> fold0.pt (epoch 10)
+    epoch 11/12 step 20/280 loss=0.2373 [box_reg=0.038 classifier=0.026 mask=0.171 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 19.2 min
+    epoch 11/12 step 40/280 loss=0.2353 [box_reg=0.041 classifier=0.027 mask=0.166 objectness=0.001 rpn_box_reg=0.001] 0.22 it/s eta 18.0 min
+    epoch 11/12 step 60/280 loss=0.2385 [box_reg=0.042 classifier=0.028 mask=0.168 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 16.3 min
+    epoch 11/12 step 80/280 loss=0.2357 [box_reg=0.041 classifier=0.026 mask=0.167 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 14.8 min
+    epoch 11/12 step 100/280 loss=0.2355 [box_reg=0.041 classifier=0.026 mask=0.167 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 13.3 min
+    epoch 11/12 step 120/280 loss=0.2319 [box_reg=0.039 classifier=0.026 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 11.8 min
+    epoch 11/12 step 140/280 loss=0.2303 [box_reg=0.038 classifier=0.026 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 10.3 min
+    epoch 11/12 step 160/280 loss=0.2296 [box_reg=0.038 classifier=0.026 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 8.8 min
+    epoch 11/12 step 180/280 loss=0.2328 [box_reg=0.039 classifier=0.027 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 7.4 min
+    epoch 11/12 step 200/280 loss=0.2308 [box_reg=0.039 classifier=0.026 mask=0.164 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 5.9 min
+    epoch 11/12 step 220/280 loss=0.2307 [box_reg=0.039 classifier=0.026 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 4.4 min
+    epoch 11/12 step 240/280 loss=0.2290 [box_reg=0.038 classifier=0.026 mask=0.164 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 2.9 min
+    epoch 11/12 step 260/280 loss=0.2286 [box_reg=0.038 classifier=0.026 mask=0.163 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 1.5 min
+    epoch 11/12 step 280/280 loss=0.2293 [box_reg=0.038 classifier=0.026 mask=0.164 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 0.0 min
+  fold 0 epoch 11/12 done in 1238s, mean loss 0.2293 [box_reg=0.0383 classifier=0.0261 mask=0.1637 objectness=0.0004 rpn_box_reg=0.0009]
+  fold 0 checkpoint saved -> fold0.pt (epoch 11)
+    epoch 12/12 step 20/280 loss=0.2179 [box_reg=0.037 classifier=0.024 mask=0.156 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 18.5 min
+    epoch 12/12 step 40/280 loss=0.2196 [box_reg=0.035 classifier=0.023 mask=0.160 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 17.4 min
+    epoch 12/12 step 60/280 loss=0.2209 [box_reg=0.036 classifier=0.024 mask=0.160 objectness=0.000 rpn_box_reg=0.001] 0.22 it/s eta 16.4 min
+    epoch 12/12 step 80/280 loss=0.2195 [box_reg=0.035 classifier=0.024 mask=0.159 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 14.7 min
+    epoch 12/12 step 100/280 loss=0.2230 [box_reg=0.036 classifier=0.024 mask=0.161 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 13.2 min
+    epoch 12/12 step 120/280 loss=0.2235 [box_reg=0.036 classifier=0.024 mask=0.162 objectness=0.001 rpn_box_reg=0.001] 0.23 it/s eta 11.8 min
+    epoch 12/12 step 140/280 loss=0.2236 [box_reg=0.036 classifier=0.024 mask=0.163 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 10.4 min
+    epoch 12/12 step 160/280 loss=0.2237 [box_reg=0.035 classifier=0.024 mask=0.163 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 8.9 min
+    epoch 12/12 step 180/280 loss=0.2232 [box_reg=0.035 classifier=0.024 mask=0.164 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 7.4 min
+    epoch 12/12 step 200/280 loss=0.2257 [box_reg=0.035 classifier=0.024 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 5.9 min
+    epoch 12/12 step 220/280 loss=0.2251 [box_reg=0.035 classifier=0.024 mask=0.164 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 4.4 min
+    epoch 12/12 step 240/280 loss=0.2263 [box_reg=0.036 classifier=0.024 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 3.0 min
+    epoch 12/12 step 260/280 loss=0.2260 [box_reg=0.036 classifier=0.024 mask=0.165 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 1.5 min
+    epoch 12/12 step 280/280 loss=0.2261 [box_reg=0.036 classifier=0.025 mask=0.164 objectness=0.000 rpn_box_reg=0.001] 0.23 it/s eta 0.0 min
+  fold 0 epoch 12/12 done in 1241s, mean loss 0.2261 [box_reg=0.0359 classifier=0.0246 mask=0.1643 objectness=0.0004 rpn_box_reg=0.0008]
+  fold 0 checkpoint saved -> fold0.pt (epoch 12)
+  fold 0 checkpoint -> /Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/checkpoints/fold0.pt
+
+training complete. Next:
+  make predict          # inference on testB
+  make submission       # build + verify b_submission.zip

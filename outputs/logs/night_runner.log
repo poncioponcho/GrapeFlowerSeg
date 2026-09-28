@@ -1,0 +1,28 @@
+night runner start 2026-09-27T23:05:38  plan=night_20260927_grape_seg  deadline=2026-09-28 06:00:00
+  [archive_submission1] start (priority 0)
+  [archive_submission1] done in 0.0s
+  [wait_ensemble_eval] start (priority 1)
+  [wait_ensemble_eval] file appeared after 0.0s
+  [predict_testB_ensemble] start (priority 10)
+  [predict_testB_ensemble] done in 306.3s
+  [build_submission2] start (priority 11)
+  [build_submission2] done in 63.5s
+  [repro_sample_check] start (priority 12)
+  [repro_sample_check] attempt 1 failed (exit 1)
+  [repro_sample_check] attempt 2 failed (exit 1)
+  [threshold_scan_ensemble_holdout] start (priority 20)
+  [threshold_scan_ensemble_holdout] done in 1.6s
+  [fold_eval_1] start (priority 21)
+  [fold_eval_1] done in 71.1s
+  [fold_eval_2] start (priority 22)
+  [fold_eval_2] done in 76.9s
+  [fold_eval_3] start (priority 23)
+  [fold_eval_3] done in 81.1s
+  [fold_eval_4] start (priority 24)
+  [fold_eval_4] done in 76.2s
+  [e4_fold0_epochs24] start (priority 30)
+  [e4_fold0_epochs24] done in 10336.5s
+  [eval_fold0_e24] start (priority 31)
+  [eval_fold0_e24] done in 67.9s
+report written: /Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/night/night_report_20260928_0212.md  completion rate 92%
+deadline reached (2026-09-28 06:00:00), runner exiting 2026-09-28T06:00:09

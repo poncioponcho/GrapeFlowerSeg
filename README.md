@@ -172,7 +172,7 @@ src/data/
 src/eval/
   mask_map.py                 调用冻结的官方评分脚本
   official_oracle/            ⛔ 官方评分脚本原件（逐字节冻结，SHA 守护）
-                              —— 第三方代码，未纳入版本控制，见下方说明
+                              —— 主办方第三方代码，见「版本控制范围」
 src/submit/
   result_json.py              result.json 构造与逐字段校验
   solution_commit.py          5 字段 SHA 声明
@@ -184,16 +184,28 @@ tests/                        116 个测试
 archive/classification_berry/ 三分类赛题的旧代码（已归档，不再使用）
 ```
 
-### 未纳入版本控制的内容
+### 版本控制范围
 
-| 路径 | 原因 |
-|---|---|
-| `data/` | 比赛数据，主办方条款不允许再分发；用 `make data` / `make split` 重建清单与折 |
-| `outputs/`、`solution/model/*.pt` | 权重 351 MB/个、`solution.zip` ~1.6 GB，超 GitHub 单文件限制 |
-| `src/eval/official_oracle/`、`src/submit/official/` | **主办方自己的评分/校验脚本**（第三方代码），需从官方提交包取回；`src/official_freeze.json` 记录了它们应有的 SHA-256 |
+本仓库是**私有**仓库，除凭据外尽可能完整（已做项目级密钥扫描：无 API key、无 token、
+无 `.env`、无 `kaggle.json`）。
+
+| 路径 | 入库 | 说明 |
+|---|---|---|
+| 代码 / 测试 / 文档 / 配置 | ✅ | 主体 |
+| `data/`（训练与测试图、清单、折划分、样例提交） | ✅ | 私有仓库内留存 |
+| `src/eval/official_oracle/`、`src/submit/official/` | ✅ | 主办方评分/校验脚本 —— **第三方代码，仅因私有而留存，非我方授权** |
+| `outputs/`（报告、日志、预测、三次提交记录） | ✅ | 含各次 `result.json` / `solution_commit.txt` / `SUBMISSION_IDENTITY.md` |
+| `.workbuddy-ai/` | ✅ | 助手项目笔记 |
+| `data/raw/训练集A.zip`（553 MB）、`outputs/checkpoints/`（6 × 335 MB）、`outputs/submissions/submission*/solution.zip`（2 × 1.5 GB） | ❌ | **GitHub 单文件 100 MB 硬限制**（private 同样适用）—— 是体积问题，不是隐私问题；需外部备份或 Git LFS |
 
 缺官方脚本时 `tests/test_official_freeze.py` 会 **skip 而不是 fail**，
-所以 clone 下来直接 `make test` 也是绿的（2 passed / 7 skipped）。
+所以从官方提交包之外拿到代码的人直接 `make test` 也是绿的。
+
+> ⚠️ 两条 `.gitignore` 血泪教训（都实际踩过）：
+> 1. **排除目录必须加前导斜杠。** 裸 `data/` 会匹配任意层级的同名目录，
+>    曾把 `src/data/coco.py`、`src/data/split_by_source.py` 一起排除，导致仓库残缺。
+> 2. **`.gitignore` 不支持行内注释。** 行尾写 `# 553 MB` 会让整行变成模式，
+>    规则静默失效 —— 注释必须单独成行。
 
 ### 设计要点
 

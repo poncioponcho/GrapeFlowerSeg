@@ -1,0 +1,4 @@
+inference short sides = [640, 1024]
+  12/12 images
+wrote /var/folders/w8/nc6rj3f11jd_ttk_hc2yxz7h0000gn/T/night_repro_7x4p7rx_/repro.json (12 images, 59 instances)
+repro check PASS: 12 images reproduced (5 weights, device=cpu); categories identical, min mask IoU 0.998495 >= 0.995, max score delta 2e-06 <= 1e-05

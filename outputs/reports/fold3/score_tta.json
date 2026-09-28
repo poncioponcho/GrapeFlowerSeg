@@ -1,0 +1,100 @@
+{
+  "status": "success",
+  "gt_json": "/Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/reports/fold3/gt.json",
+  "ignore_json": "/Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/reports/fold3/ignore.json",
+  "submission_json": "/Users/seyonmacbook/WorkBuddy AI/妮娜皇后葡萄果粒着色阶段分级/outputs/reports/fold3/result.json",
+  "validation": {
+    "version": "1.0",
+    "num_images": 140,
+    "num_predictions": 547,
+    "predictions_per_category": {
+      "0": {
+        "name": "完整花穗",
+        "count": 198
+      },
+      "1": {
+        "name": "不完整花穗",
+        "count": 349
+      }
+    },
+    "max_predictions_in_one_image": 9
+  },
+  "ignore_policy": {
+    "overlap_metric": "intersection_over_prediction",
+    "overlap_threshold": 0.5,
+    "num_ignore_regions": 326,
+    "num_images_with_ignore": 112
+  },
+  "evaluation": {
+    "metric": "COCO Mask mAP@[0.50:0.95]",
+    "score": 0.3452864948831734,
+    "score_percent": 34.52864948831734,
+    "iou_thresholds": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "recall_points": 101,
+    "max_dets": [
+      1,
+      10,
+      100
+    ],
+    "overall": {
+      "Mask_mAP_50_95": 0.3452864948831734,
+      "Mask_AP50": 0.7587354389274474,
+      "Mask_AP75": 0.23673297782046315,
+      "Mask_AP_small": -1.0,
+      "Mask_AP_medium": 0.3226789100525596,
+      "Mask_AP_large": 0.40117938820936533,
+      "Mask_AR_maxDets_1": 0.30414018066242887,
+      "Mask_AR_maxDets_10": 0.4678069588491134,
+      "Mask_AR_maxDets_100": 0.4678069588491134,
+      "Mask_AR_small": -1.0,
+      "Mask_AR_medium": 0.4269409937888199,
+      "Mask_AR_large": 0.5319226750261233
+    },
+    "per_category": {
+      "0": {
+        "name": "完整花穗",
+        "submission_category_id": 0,
+        "gt_category_id": 1,
+        "AP_50_95": 0.3468370778955355,
+        "AP50": 0.7895823040699826,
+        "AP75": 0.22558487913977376,
+        "AR_50_95": 0.4754098360655738
+      },
+      "1": {
+        "name": "不完整花穗",
+        "submission_category_id": 1,
+        "gt_category_id": 2,
+        "AP_50_95": 0.3437359118708113,
+        "AP50": 0.7278885737849121,
+        "AP75": 0.24788107650115246,
+        "AR_50_95": 0.46020408163265303
+      }
+    },
+    "ignore_application": {
+      "ignored_unmatched_predictions_by_iou": {
+        "0.50": 44,
+        "0.55": 44,
+        "0.60": 44,
+        "0.65": 44,
+        "0.70": 44,
+        "0.75": 44,
+        "0.80": 44,
+        "0.85": 44,
+        "0.90": 44,
+        "0.95": 44
+      }
+    }
+  },
+  "coco_summary": " Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.345\n Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.759\n Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.237\n Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000\n Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.323\n Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.401\n Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.304\n Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.468\n Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.468\n Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = -1.000\n Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.427\n Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.532\n"
+}
