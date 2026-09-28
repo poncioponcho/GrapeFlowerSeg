@@ -24,9 +24,33 @@
   已公开的历史**（可能被缓存/fork）。
 - **GitHub 单文件 100MB 是硬限制，private 仓库同样拒收**。本地有 9 个文件超限：
   `data/raw/训练集A.zip`(553M)、6 个 checkpoint(335M/个)、2 个 solution.zip(1.5G/个)。
-  需要 Git LFS（本机未安装，免费额度 1GB 存储，实际需 ~5GB）。
-  → **大文件备份走外部渠道**（移动硬盘 / 对象存储），别指望 GitHub。
+  → **推荐方案：GitHub Release 附件**（官方文档：每个附件 <2GiB、单 release 最多 1000 个、
+  无总量与带宽限制），9 个文件全部可挂上去，不进 git 历史、不撑大仓库、不需要 LFS、免费。
+  private 仓库的 release 同样私有。备选：分卷压缩进 git（会把仓库撑到 1.4GB+，不推荐）、
+  Git LFS（免费额度 1GB，不够 5.6GB，要买数据包）、外部硬盘。
+- 关于数据能否公开：查过 `docs/official_rules.md` §7「禁止事项」，**只禁止外部数据、
+  测试集查表/硬编码、读取隐藏标注、用测试图训练、在线 API**，**没有禁止传播数据集**的条文。
+  所以训练集/测试集不是"不能传"，纯粹是 100MB 技术上限挡住的。
 - private ≠ secret：GitHub 员工可见；日后若转 public，整个历史都会公开。不要放凭据。
+
+## 仓库最终范围（用户决定：private 后"除凭据外尽量全传"）
+
+- **已入库 1217 文件 / 894MB**：全部代码文档 + `data/`（902 张图、清单、折划分、样例提交）
+  + 主办方官方脚本 + `outputs/`（报告/日志/预测/三次提交记录）+ `.workbuddy-ai/`
+- **仍排除（纯体积，非隐私）**：`data/raw/训练集A.zip`(553M)、
+  `outputs/checkpoints/`(6×335M)、`outputs/submissions/submission*/solution.zip`(2×1.5G)
+  —— GitHub 单文件 100MB 硬限制，private 同样适用；需外部备份或 Git LFS
+- 推送前必须验证：`git rev-list --objects --all | git cat-file --batch-check` 里
+  **可达 blob 无 >100MB**（否则 push 被拒）。实测可达 875MB，最大 80MB。
+
+## 又两个 .gitignore 陷阱（实际踩过，README 已记）
+
+1. **不支持行内注释** —— 行尾 `# 553 MB` 会成为模式的一部分，规则静默失效，
+   结果 9 个大文件差点被一起提交（`git add` 因此被宿主杀掉，还留下 5.7GB 的
+   `.git` 与 `index.lock`）。注释必须单独成行。
+2. 被 SIGTERM 杀掉的 `git add` 会留下 **`.git/index.lock`**（0 字节），
+   后续 git 命令报 `Unable to create index.lock`。确认无 git 进程后直接删掉即可。
+   `git gc --prune=now` 可回收被杀进程留下的未引用对象。
 
 ## 复用地图（下次同类比赛直接照这个换）
 
