@@ -20,15 +20,19 @@ venv/
 # terms, and the archives are hundreds of MB on top. Download it from the
 # official page instead; manifests and fold splits are regenerated with
 # `make data` / `make split`.
-data/
+#
+# Anchored with a leading slash on purpose: a bare `data/` also matches
+# src/data/, which silently dropped two load-bearing modules
+# (coco.py, split_by_source.py) from the first published commit.
+/data/
 
 # ---------------------------------------------------------------------------
 # Trained artefacts and submission packages - NEVER publish
 # ---------------------------------------------------------------------------
 # One checkpoint is 351 MB (over GitHub's 100 MB per-file limit) and each
 # packed solution.zip is ~1.6 GB. They belong in the post-competition review
-# channel, not in a public repository.
-outputs/
+# channel, not in a public repository. Anchored for the same reason as /data/.
+/outputs/
 solution/model/*.pt
 
 # ---------------------------------------------------------------------------
