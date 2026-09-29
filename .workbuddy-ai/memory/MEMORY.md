@@ -54,6 +54,19 @@
 
 ## 复用地图（下次同类比赛直接照这个换）
 
+**已抽出独立模板仓库**：`/Users/seyonmacbook/WorkBuddy AI/ml-competition-template`
+（本地 git 仓库，首提交 `a0bb320`，44 文件）。**下次新赛题直接 clone 它，不要在
+本仓库上改** —— 本仓库历史里混着两个赛题的文档，容易误传。
+
+模板内容：`configs/default.yaml`（占位符版常量源）、`src/common/`、`src/data/`
+（含 split_by_source 分组 K 折 + 泄漏断言）、`src/submit/` 五件套 + identity、
+`src/eval/mask_map.py`、`scripts/`（训练/推理/评分/打包/复现检查/阈值扫描/夜间队列/
+过拟合探针/官方脚本冻结）、`solution/` 契约说明 + inference 骨架、`tests/`（28 通过
+14 跳过）、`TEMPLATE.md`（★ 填空清单）、`docs/experiments.md`（日志模板）。
+项目级扫描确认**零赛题绑定**。有意不含：具体模型、官方评分脚本、任何数据与权重。
+
+### 本仓库的可复用/需替换清单（抽模板时的依据）
+
 **可直接复用（约 45 文件，未绑定赛题）**
 - `src/common/`：配置加载、SHA-256、IO
 - `src/submit/`：`result_json` / `solution_commit` / `pack_submission` / `verify_submission`
