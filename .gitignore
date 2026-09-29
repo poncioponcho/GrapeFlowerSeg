@@ -40,6 +40,11 @@ venv/
 /outputs/submissions/submission*/solution.zip
 solution/model/*.pt
 
+# Exception: submission #1's solution.zip is a 4.5 KB stub with no weights, so
+# it is small enough to track - and it is NOT in the cloud-drive archive (only
+# #2 and #3 are). Tracking it keeps outputs/ fully recoverable from backups.
+!/outputs/submissions/submission1_uploaded/solution.zip
+
 # Everything else is tracked - including the competition data, the frozen
 # official scripts and the assistant's project notes. This repository is
 # private and holds no credentials (checked by a project-wide scan).
