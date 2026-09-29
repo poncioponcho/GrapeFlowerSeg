@@ -57,6 +57,46 @@ shasum -a 256 <下载的文件>
 # 与上表比对；submission3_solution.zip 必须等于 753747a9df77a8b32ea5581b3e66f320f20e9697bc3ec595a5fc8ee3a96a56a3
 ```
 
+## 从备份恢复（本地已清理，这是唯一的恢复路径）
+
+2026-09-29 起本地只保留仓库内容（2.2 GB）；权重、提交包与打包归档已删除，
+因为它们在下面两处都有副本。恢复步骤：
+
+```bash
+# 1) 克隆仓库 —— 拿到代码、数据（902 张图 + 清单 + 折划分）、
+#    官方脚本、outputs/ 的记录（reports / logs / predictions / 提交元数据）
+git clone git@github.com:poncioponcho/GrapeFlowerSeg.git
+cd GrapeFlowerSeg
+
+# 2) 从云盘下载 GrapeFlowerSeg_artifacts.zip（5.54 GiB），解压到仓库根目录
+unzip GrapeFlowerSeg_artifacts.zip
+
+# 3) 归位（归档内为扁平结构，按名字放回）
+mkdir -p outputs/checkpoints
+mv fold0.pt fold1.pt fold2.pt fold3.pt fold4.pt fold0_brokenmask.pt outputs/checkpoints/
+mv submission2_solution.zip outputs/submissions/submission2_uploaded/solution.zip
+mv submission3_solution.zip outputs/submissions/submission3_uploaded/solution.zip
+mv train_set_A.zip data/raw/训练集A.zip          # 名字改过，字节未变
+
+# 4) 校验（关键一步）
+shasum -a 256 outputs/submissions/submission3_uploaded/solution.zip
+#   必须等于 753747a9df77a8b32ea5581b3e66f320f20e9697bc3ec595a5fc8ee3a96a56a3
+```
+
+### 覆盖情况对照
+
+| 内容 | 仓库（GitHub 私有） | 云盘归档 |
+|---|---|---|
+| 代码、测试、文档、配置 | ✅ | — |
+| `data/`（训练/测试图、清单、折划分） | ✅ | 训练集原始包 |
+| 官方评分/校验脚本 | ✅ | — |
+| `outputs/reports`、`logs`、`predictions`、提交元数据 | ✅ | — |
+| 5 折权重 + `fold0_brokenmask.pt` | — | ✅ |
+| `submission2/3_uploaded/solution.zip` | — | ✅ |
+| `submission1_uploaded/solution.zip`（4.5 KB 存根） | ✅ | — |
+
+`outputs/release_assets/` 里的打包归档可由上表内容在约 1 分钟内重建，无需备份。
+
 ## 为什么不用 Git LFS
 
 Git LFS 免费额度为 1 GB 存储，而这 9 个文件需要 5.5 GB，需额外购买数据包；
