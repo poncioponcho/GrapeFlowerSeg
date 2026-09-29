@@ -12,6 +12,10 @@ venv/
 # Scratch left behind by build_submission.py (staged weight copies)
 /outputs/staging/
 
+# Staging area for the GitHub Release assets - holds hard links to the big
+# files, so it must never be committed (they are over the 100 MB limit anyway).
+/outputs/release_assets/
+
 # ---------------------------------------------------------------------------
 # Too large for GitHub - a size limit, NOT a privacy decision
 # ---------------------------------------------------------------------------

@@ -240,3 +240,4 @@ archive/classification_berry/ 三分类赛题的旧代码（已归档，不再�
 | `docs/official_rules.md` | 官方赛题契约存档（类别、指标、提交格式、约束） |
 | `docs/experiments.md` | 实验日志、环境 pin、评分代码变更记录、缺陷留痕 |
 | `docs/upload_checklist.md` | 上传前后逐项清单（防交错比赛、归档要求） |
+| `docs/release_assets.md` | 9 个超 100 MB 大文件的清单与 SHA-256（走 GitHub Release 附件） |
